@@ -1,0 +1,9 @@
+# Sensitive data
+sent_emails.txt
+failed_emails.txt
+CUSTOMERS_EMAILS_REMAINING.csv
+CUSTOMERS_EMAILS.csv
+
+# Python
+__pycache__/
+*.pyc

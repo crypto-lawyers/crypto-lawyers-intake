@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Legal Services Agreement & Retainer | The Crypto Lawyers PLLC</title>
+    <link rel="icon" href="favicon.webp" type="image/webp">
+    <style>
+        :root {
+            --primary: #008080;
+            --primary-dark: #006666;
+            --dark: #1a1a2e;
+            --darker: #0f0f23;
+            --light: #f8f9fa;
+            --text: #333;
+            --text-light: #666;
+            --border: #dee2e6;
+            --success: #28a745;
+            --danger: #dc3545;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Georgia', 'Times New Roman', serif; color: var(--text); line-height: 1.8; background: white; }
+        
+        header { background: var(--darker); padding: 1rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .header-inner { max-width: 900px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo img { height: 40px; width: auto; }
+        .doc-type { color: var(--primary); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .container { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+        
+        .doc-header { text-align: center; margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 3px double var(--border); }
+        .doc-header h1 { font-size: 1.8rem; color: var(--darker); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 2px; }
+        .doc-header .subtitle { font-size: 1rem; color: var(--text-light); font-style: italic; }
+        .doc-header .effective-date { display: inline-block; background: var(--light); padding: 0.5rem 1.5rem; border-radius: 5px; margin-top: 1rem; font-size: 0.9rem; border: 1px solid var(--border); }
+        
+        .section { margin-bottom: 2rem; }
+        .section-title { font-size: 1.1rem; font-weight: bold; color: var(--darker); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); text-transform: uppercase; letter-spacing: 1px; }
+        
+        .clause { margin-bottom: 1.5rem; }
+        .clause-number { font-weight: bold; color: var(--primary); }
+        .clause-title { font-weight: bold; }
+        
+        .definition-box { background: var(--light); padding: 1rem 1.5rem; border-left: 4px solid var(--primary); margin: 1rem 0; border-radius: 0 5px 5px 0; }
+        .definition-box strong { color: var(--darker); }
+        
+        .warning-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 1rem 1.5rem; margin: 1rem 0; border-radius: 0 5px 5px 0; }
+        .warning-box strong { color: #856404; }
+        
+        .danger-box { background: #f8d7da; border-left: 4px solid var(--danger); padding: 1rem 1.5rem; margin: 1rem 0; border-radius: 0 5px 5px 0; }
+        .danger-box strong { color: #721c24; }
+        
+        .payment-options { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+        .payment-card { background: var(--light); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; }
+        .payment-card h4 { color: var(--primary); margin-bottom: 0.5rem; font-size: 0.95rem; }
+        .payment-card ul { margin-left: 1.2rem; font-size: 0.9rem; }
+        .payment-card li { margin-bottom: 0.3rem; }
+        
+        ul { margin-left: 1.5rem; margin-bottom: 1rem; }
+        li { margin-bottom: 0.5rem; }
+        
+        .signature-section { margin-top: 4rem; padding-top: 2rem; border-top: 3px double var(--border); }
+        .signature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem; }
+        
+        .signature-block { }
+        .signature-label { font-weight: bold; font-size: 0.9rem; color: var(--darker); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .signature-line { border-bottom: 1px solid var(--text); height: 40px; margin-bottom: 0.5rem; }
+        .signature-date { font-size: 0.85rem; color: var(--text-light); }
+        
+        .esign-area { background: var(--light); border: 2px dashed var(--border); border-radius: 10px; padding: 2rem; margin: 2rem 0; text-align: center; }
+        .esign-area h3 { color: var(--darker); margin-bottom: 1rem; }
+        
+        .esign-input { width: 100%; max-width: 400px; padding: 1rem; border: 2px solid var(--border); border-radius: 8px; font-size: 1.2rem; font-family: 'Brush Script MT', cursive; text-align: center; margin-bottom: 1rem; }
+        .esign-input:focus { outline: none; border-color: var(--primary); }
+        
+        .esign-checkbox { display: flex; align-items: flex-start; gap: 0.75rem; margin: 1rem 0; text-align: left; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .esign-checkbox input { width: auto; margin-top: 0.3rem; accent-color: var(--primary); }
+        
+        .btn { display: inline-block; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.3s; border: none; cursor: pointer; font-size: 1rem; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: var(--primary-dark); }
+        .btn-primary:disabled { background: #ccc; cursor: not-allowed; }
+        
+        .legal-footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--text-light); }
+        
+        @media (max-width: 768px) {
+            .signature-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .payment-options { grid-template-columns: 1fr; }
+            .doc-header h1 { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body style="overflow: hidden;">
+    <!-- Password Protection Modal -->
+    <div id="password-modal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 9999; display: flex; align-items: center; justify-content: center;">
+        <div style="background: white; padding: 3rem; border-radius: 15px; max-width: 450px; width: 90%; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+            <img src="logo.webp" alt="The Crypto Lawyers" style="height: 60px; margin-bottom: 1.5rem;">
+            <h2 style="color: var(--darker); margin-bottom: 0.5rem;">Restricted Access</h2>
+            <p style="color: var(--text-light); margin-bottom: 1.5rem;">Enter your case reference password to access the retainer agreement.</p>
+            <input type="password" id="access-password" placeholder="Enter password" style="width: 100%; padding: 1rem; border: 2px solid var(--border); border-radius: 8px; font-size: 1rem; margin-bottom: 1rem; text-align: center;">
+            <p id="password-error" style="color: var(--danger); font-size: 0.9rem; margin-bottom: 1rem; display: none;">Invalid password. Contact your case manager.</p>
+            <button type="button" onclick="verifyPassword()" style="width: 100%; padding: 1rem; background: var(--primary); color: white; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer;">Access Agreement</button>
+            <p style="font-size: 0.8rem; color: var(--text-light); margin-top: 1rem;">Password provided in your intake confirmation email</p>
+        </div>
+    </div>
+    
+    <header>
+        <div class="header-inner">
+            <div class="logo">
+                <a href="https://thecryptolawyers.com">
+                    <img src="logo.webp" alt="The Crypto Lawyers">
+                </a>
+            </div>
+            <div class="doc-type">Confidential Legal Document</div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="doc-header">
+            <h1>Master Legal Services Agreement & Retainer</h1>
+            <p class="subtitle">Webull Brand Impersonation & Digital Asset Recovery</p>
+            <div class="effective-date">Effective Date: <span id="effective-date"></span></div>
+        </div>
+        
+        <div class="section">
+            <p><strong>THIS AGREEMENT</strong> (the "Agreement") is made and entered into as of the date of electronic execution (the "Effective Date") by and between:</p>
+            
+            <p><strong>LEGAL COUNSEL:</strong> THE CRYPTO LAWYERS PLLC, a professional limited liability company organized under the laws of the State of TEXAS, with a principal business address of 1005 Congress Avenue, Suite 925, Austin, Texas 78701 (hereinafter referred to as the "Firm").</p>
+            
+            <p><strong>CLIENT:</strong> The individual executing this Agreement electronically via digital signature, whose identity and mailing address are recorded in the associated Case Intake File (hereinafter referred to as the "Client").</p>
+            
+            <p>The Firm and the Client may be referred to individually as a "Party" and collectively as the "Parties."</p>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">1. Recitals</h2>
+            
+            <div class="clause">
+                <p><span class="clause-number">WHEREAS</span> the Client alleges to have suffered financial loss due to fraud, negligence, or misappropriation of digital assets involving <strong>Webull Corporation</strong> and,</p>
+            </div>
+            
+            <div class="clause">
+                <p><span class="clause-number">WHEREAS</span> the Client desires to retain the Firm to provide legal representation to pursue recovery of said assets, plus compensatory damages, statutory penalties, and reparations for harm caused, where legally viable,</p>
+            </div>
+            
+            <div class="clause">
+                <p><span class="clause-number">WHEREAS</span> the Firm agrees to represent the Client subject to the terms, conditions, and strictly limited scope defined herein,</p>
+            </div>
+            
+            <div class="clause">
+                <p><span class="clause-number">NOW, THEREFORE</span> in consideration of the mutual covenants contained herein, the Parties agree as follows:</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">2. Scope of Services</h2>
+            
+            <div class="clause">
+                <p><span class="clause-number">2.1 Investigation:</span> Forensic analysis of blockchain transactions to establish a nexus of liability.</p>
+            </div>
+            
+            <div class="clause">
+                <p><span class="clause-number">2.2 Pre-Litigation Actions:</span> Drafting and serving formal Demand Letters, Cease and Desist Notices, and preservation of evidence requests.</p>
+            </div>
+            
+            <div class="clause">
+                <p><span class="clause-number">2.3 Dispute Resolution:</span> Representation of the Client in Individual Arbitration proceedings or settlement negotiations.</p>
+            </div>
+            
+            <div class="clause">
+                <div class="warning-box">
+                    <p><span class="clause-number">2.4 Exclusion of Class Action:</span> The Client explicitly acknowledges that this engagement is for an <strong>INDIVIDUAL CLAIM ONLY</strong>. The Client knowingly opts out of any potential Class Action lawsuit to pursue this matter individually.</p>
+                </div>
+            </div>
+            
+            <div class="clause">
+                <p><span class="clause-number">2.5 No Guarantee of Outcome:</span> The Firm will exercise due diligence in representing the Client; however, the Firm does not guarantee any specific result, recovery amount, or outcome.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">3. Compensation and Fees</h2>
+            
+            <div class="clause">
+                <p>In consideration for the Services, the Client agrees to the following "Hybrid" fee structure:</p>
+            </div>
+            
+            <div class="clause">
+                <p><span class="clause-number">3.1 Initial Retainer (Flat Fee):</span> The Client shall pay the Retainer. This fee is earned upon receipt and covers the immediate costs of case intake, forensic auditing, and administrative setup.</p>
+            </div>
+            
+            <div class="clause">
+                <p><span class="clause-number">3.2 Contingency Fee (Success Fee):</span> In the event of a recovery, the Firm shall be entitled to <strong>Fifteen Percent (15%)</strong> of the Gross Recovery.</p>
+                
+                <div class="definition-box">
+                    <p><strong>"Gross Recovery"</strong> is defined as the total value of all cash, cryptocurrency, or property received by the Client from the Target Entity or any third party in connection with this claim.</p>
+                </div>
+            </div>
+            
+            <div class="clause">
+                <p><span class="clause-number">3.3 Attorneys' Lien:</span> The Client hereby grants the Firm a contractual and common law lien upon the Client's claim and any proceeds recovered, to the full extent of the Fees and Costs due under this Agreement.</p>
+            </div>
+            
+            <div class="clause">
+                <p><span class="clause-number">3.4 Costs and Expenses:</span> The Client shall be responsible for all costs and expenses incurred in connection with the Services, including but not limited to filing fees, court costs, expert witness fees, and travel expenses. Such costs shall be deducted from any recovery prior to distribution to the Client.</p>
+            </div>
+            
+            <div class="clause">
+                <p><span class="clause-number">3.5 Fee Disputes:</span> Any dispute regarding fees or costs shall be resolved through the Texas fee arbitration process as provided by the State Bar of Texas.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">4. Payment Mechanics (Blockchain Policy)</h2>
+            
+            <div class="clause">
+                <p><span class="clause-number">4.1 Digital Assets:</span></p>
+                
+                <div class="payment-options">
+                    <div class="payment-card">
+                        <h4>Crypto Payments</h4>
+                        <ul>
+                            <li>USDT on TRON (TRC-20)</li>
+                            <li>USDC on Ethereum (ERC-20)</li>
+                            <li>Bitcoin (Native SegWit)</li>
+                        </ul>
+                    </div>
+                    <div class="payment-card">
+                        <h4>Bank Wire/ACH</h4>
+                        <ul>
+                            <li>Available for cases with Reported Loss ≥ $100,000 USD</li>
+                            <li>Bank details provided post-signature</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <p>(a) <strong>Retainer Payment:</strong> The Client shall remit the Initial Retainer via the methods listed above.</p>
+                
+                <p>(b) <strong>Settlement Wallet Designation:</strong> The wallet address or bank account used to remit the Initial Retainer shall automatically serve as the designated receiving address for all recovered principal, damages, reparations, and other consideration ("Settlement Wallet"). Client confirms they control this Settlement Wallet and authorize the Firm to distribute recovered funds thereto.</p>
+                
+                <p>(c) <strong>Digital Asset Terms:</strong> For crypto payments, USD value is locked at blockchain confirmation time via public market data (CoinGecko). Client bears volatility risk between agreement signing and payment confirmation. The Firm will convert crypto retainers to fiat or stablecoin within 48 hours per Texas IOLTA rules.</p>
+                
+                <div class="danger-box">
+                    <p><strong>(d) Network Warning:</strong> Sending assets to an incompatible network (e.g., ERC-20 tokens to TRC-20 address) will result in permanent loss of funds. Recovery is not guaranteed.</p>
+                </div>
+            </div>
+            
+            <div class="clause">
+                <p><span class="clause-number">4.2 Network Fees:</span> The Client assumes full responsibility for any blockchain network fees ("Gas Fees") associated with the transfer of the Retainer or Settlement funds.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">5. Term and Termination</h2>
+            
+            <div class="clause">
+                <p><span class="clause-number">5.1 Term:</span> This Agreement shall commence on the Effective Date and continue until the matter is resolved via settlement, judgment, or denial, or until terminated as provided herein.</p>
+            </div>
+            
+            <div class="clause">
+                <p><span class="clause-number">5.2 Termination by Client:</span> The Client may terminate this Agreement at any time upon written notice to the Firm. In such event, the Client shall be responsible for all fees and costs incurred up to the date of termination, including any work performed on a contingency basis.</p>
+            </div>
+            
+            <div class="clause">
+                <p><span class="clause-number">5.3 Termination by Firm:</span> The Firm may terminate this Agreement upon written notice to the Client if: (a) the Client fails to pay fees or costs when due; (b) the Client fails to cooperate or provide requested information; (c) the Client insists upon action that is contrary to the Firm's advice; or (d) the Firm determines that a conflict of interest exists.</p>
+            </div>
+            
+            <div class="clause">
+                <p><span class="clause-number">5.4 Effect of Termination:</span> Upon termination, the Firm shall: (a) refund any unearned portion of the retainer; (b) provide the Client with copies of all documents in the Client's file; and (c) retain a lien for any unpaid fees or costs as described in Section 3.3.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">6. Relationship of Parties (Independent Contractor)</h2>
+            
+            <div class="clause">
+                <p>The Firm is an independent contractor and not an employee of the Client.</p>
+            </div>
+            
+            <div class="clause">
+                <p><span class="clause-number">6.1 Control:</span> The Firm has the sole right to control and direct the means, manner, and method by which the Services are performed.</p>
+            </div>
+            
+            <div class="clause">
+                <p><span class="clause-number">6.2 Non-Exclusivity:</span> The Firm retains the right to perform legal services for other clients during the term of this Agreement, provided no direct conflict of interest exists.</p>
+            </div>
+            
+            <div class="clause">
+                <p><span class="clause-number">6.3 No Agency:</span> Neither Party has the authority to bind the other Party to any contract or obligation outside the scope of this Agreement.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">7. Confidentiality and Privilege</h2>
+            
+            <div class="clause">
+                <p><span class="clause-number">7.1 Attorney-Client Privilege:</span> Communications between the Client and the Firm are protected by Attorney-Client Privilege to the fullest extent of the law.</p>
+            </div>
+            
+            <div class="clause">
+                <p><span class="clause-number">7.2 Proprietary Information:</span> The Client acknowledges that the Firm's legal strategies, templates, forensic methods, and negotiation techniques constitute "Trade Secrets." The Client agrees not to disclose, share, or publish the Firm's work product to third parties without written consent.</p>
+            </div>
+            
+            <div class="clause">
+                <p><span class="clause-number">7.3 Data Privacy:</span> The Firm shall take reasonable steps to protect the Client's personal data and financial information in compliance with standard legal ethics.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">8. Return of Records and File Retention</h2>
+            
+            <div class="clause">
+                <p>Upon termination of this Agreement, and upon the Client's request, the Firm shall provide the Client with copies of all documents in the Client's file. The Firm may retain copies for its records as permitted by applicable law.</p>
+            </div>
+            
+            <div class="clause">
+                <p><span class="clause-number">8.1 File Retention:</span> The Firm shall retain the Client's file for a period of seven (7) years from the conclusion of the matter, after which the file may be destroyed without further notice to the Client.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">9. Dispute Resolution and Arbitration</h2>
+            
+            <div class="clause">
+                <div class="warning-box">
+                    <p><span class="clause-number">9.1 Mandatory Arbitration:</span> Any dispute, claim, or controversy arising out of or relating to this Agreement or the breach, termination, enforcement, interpretation, or validity thereof, shall be determined by final and binding arbitration in Austin, Texas, before a single arbitrator administered by the American Arbitration Association ("AAA") under its Consumer Arbitration Rules.</p>
+                </div>
+            </div>
+            
+            <div class="clause">
+                <p><span class="clause-number">9.2 Arbitration Procedures:</span> The arbitration shall be conducted in English. The arbitrator's decision shall be final and binding, and judgment on the award rendered by the arbitrator may be entered in any court having jurisdiction thereof.</p>
+            </div>
+            
+            <div class="clause">
+                <p><span class="clause-number">9.3 Costs of Arbitration:</span> Each Party shall bear its own costs and attorneys' fees in any arbitration proceeding, unless the arbitrator determines otherwise.</p>
+            </div>
+            
+            <div class="clause">
+                <p><span class="clause-number">9.4 Class Action Waiver:</span> The Parties agree that any arbitration shall be conducted on an individual basis only and not in a class, consolidated, or representative action.</p>
+            </div>
+            
+            <div class="clause">
+                <p><span class="clause-number">9.5 Injunctive Relief:</span> Notwithstanding the foregoing, either Party may seek injunctive or other equitable relief in any court of competent jurisdiction to prevent the actual or threatened infringement, misappropriation, or violation of intellectual property rights or confidential information.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">10. Governing Law and Jurisdiction</h2>
+            
+            <div class="clause">
+                <p><span class="clause-number">10.1 Governing Law:</span> This Agreement shall be governed by and construed in accordance with the laws of the State of Texas, without regard to its conflict of laws principles.</p>
+            </div>
+            
+            <div class="clause">
+                <p><span class="clause-number">10.2 Jurisdiction:</span> Subject to the arbitration provisions in Section 9, the Parties consent to the exclusive jurisdiction of the state and federal courts located in Austin, Texas, for any action or proceeding arising out of this Agreement.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">11. Indemnification</h2>
+            
+            <div class="clause">
+                <p><span class="clause-number">11.1 Client Indemnification:</span> The Client agrees to indemnify, defend, and hold harmless the Firm, its partners, associates, employees, and agents from and against any and all claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising out of or relating to: (a) the Client's breach of this Agreement; (b) any misrepresentation or omission by the Client; or (c) any third-party claim related to the Client's underlying dispute.</p>
+            </div>
+            
+            <div class="clause">
+                <p><span class="clause-number">11.2 Firm Indemnification:</span> The Firm agrees to indemnify, defend, and hold harmless the Client from and against any and all claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising out of or relating to the Firm's gross negligence or willful misconduct in the performance of the Services.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">12. Limitation of Liability</h2>
+            
+            <div class="clause">
+                <div class="danger-box">
+                    <p><span class="clause-number">12.1 Limitation:</span> TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE FIRM'S TOTAL AGGREGATE LIABILITY ARISING OUT OF OR RELATED TO THIS AGREEMENT SHALL NOT EXCEED THE AMOUNT OF FEES ACTUALLY PAID BY THE CLIENT TO THE FIRM UNDER THIS AGREEMENT DURING THE TWELVE (12) MONTHS PRECEDING THE EVENT GIVING RISE TO THE LIABILITY.</p>
+                </div>
+            </div>
+            
+            <div class="clause">
+                <p><span class="clause-number">12.2 No Consequential Damages:</span> IN NO EVENT SHALL EITHER PARTY BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, DATA, OR BUSINESS OPPORTUNITIES, ARISING OUT OF OR RELATED TO THIS AGREEMENT.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">13. Force Majeure</h2>
+            
+            <div class="clause">
+                <p>Neither Party shall be liable for any failure or delay in performing its obligations under this Agreement to the extent such failure or delay results from circumstances beyond the reasonable control of such Party, including but not limited to: acts of God, natural disasters, pandemic, government actions, war, terrorism, cyberattacks, blockchain network failures, or internet outages.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">14. Assignment</h2>
+            
+            <div class="clause">
+                <p>The Client may not assign or transfer this Agreement or any rights or obligations hereunder without the prior written consent of the Firm. The Firm may assign this Agreement to an affiliated entity or successor in interest without the Client's consent.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">15. Notices</h2>
+            
+            <div class="clause">
+                <p>All notices required or permitted under this Agreement shall be in writing and shall be deemed delivered when: (a) delivered personally; (b) sent by email to the address on file; or (c) deposited with a nationally recognized overnight courier. Notices to the Firm shall be sent to the address listed above. Notices to the Client shall be sent to the email or mailing address in the Case Intake File.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">16. Severability</h2>
+            
+            <div class="clause">
+                <p>If any provision of this Agreement is held to be invalid, illegal, or unenforceable, the remaining provisions shall continue in full force and effect. The invalid provision shall be modified to the minimum extent necessary to make it valid and enforceable while preserving the Parties' original intent.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">17. Entire Agreement</h2>
+            
+            <div class="clause">
+                <p>This Agreement constitutes the entire agreement between the Parties with respect to the subject matter hereof and supersedes all prior and contemporaneous agreements, understandings, negotiations, and discussions, whether oral or written. No modification or amendment of this Agreement shall be valid unless in writing and signed by both Parties.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">18. Waiver</h2>
+            
+            <div class="clause">
+                <p>The failure of either Party to enforce any provision of this Agreement shall not constitute a waiver of such provision or the right to enforce it at a later time. Any waiver must be in writing and signed by the waiving Party.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">19. Survival</h2>
+            
+            <div class="clause">
+                <p>The provisions of Sections 3 (Compensation and Fees), 7 (Confidentiality and Privilege), 9 (Dispute Resolution and Arbitration), 10 (Governing Law and Jurisdiction), 11 (Indemnification), and 12 (Limitation of Liability) shall survive the termination or expiration of this Agreement.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">20. Counterparts and Electronic Signatures</h2>
+            
+            <div class="clause">
+                <p>This Agreement may be executed in one or more counterparts, each of which shall be deemed an original and all of which together shall constitute one and the same instrument. Electronic signatures shall be deemed original signatures for all purposes.</p>
+            </div>
+        </div>
+        
+        <div class="signature-section">
+            <h2 class="section-title">Electronic Signature and Acceptance</h2>
+            
+            <div class="esign-area">
+                <h3>Digital Execution</h3>
+                <p style="margin-bottom: 1rem; color: var(--text-light);">By typing your full legal name below, you acknowledge that you have read, understood, and agree to be bound by all terms and conditions of this Agreement.</p>
+                
+                <input type="text" id="client-signature" class="esign-input" placeholder="Type your full legal name" autocomplete="off">
+                
+                <div class="esign-checkbox">
+                    <input type="checkbox" id="agree-terms" required>
+                    <label for="agree-terms">I have read and understand the Master Legal Services Agreement & Retainer. I agree to all terms and conditions herein and intend to be legally bound by this Agreement. I understand that this electronic signature has the same legal effect as a handwritten signature.</label>
+                </div>
+                
+                <div class="esign-checkbox">
+                    <input type="checkbox" id="confirm-age" required>
+                    <label for="confirm-age">I confirm that I am at least 18 years of age and legally capable of entering into this Agreement.</label>
+                </div>
+                
+                <button type="button" id="submit-btn" class="btn btn-primary" disabled onclick="submitAgreement()">Execute Agreement</button>
+            </div>
+            
+            <div class="signature-grid">
+                <div class="signature-block">
+                    <div class="signature-label">Client</div>
+                    <div class="signature-line" id="client-sig-display"></div>
+                    <div class="signature-date">Date: <span id="client-date"></span></div>
+                </div>
+                
+                <div class="signature-block">
+                    <div class="signature-label">The Crypto Lawyers PLLC</div>
+                    <div class="signature-line">Rafael Yakobi, Esq.</div>
+                    <div class="signature-date">Date: <span id="firm-date"></span></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="legal-footer">
+            <p><strong>The Crypto Lawyers PLLC</strong> | Forensic Litigation Division | Florida Bar No. #1002677</p>
+            <p>848 Brickell Avenue, Penthouse 5, Miami, Florida 33131 | 1005 Congress Avenue, Suite 925, Austin, Texas 78701</p>
+            <p style="margin-top: 1rem;"><em>This communication constitutes attorney advertising. Prior results do not guarantee similar outcomes. This Agreement is for informational purposes and establishes an attorney-client relationship only upon execution and receipt of the Initial Retainer.</em></p>
+        </div>
+    </div>
+    
+    <script>
+        // Password protection - password encoded to avoid special char issues
+        // Password: SOobgj#@D$GiK7fMx9Sy9c3E
+        const correctPassword = atob('U09vYmdqI0BEJEdpSzdmTXg5U3k5YzNF');
+        
+        function verifyPassword() {
+            const password = document.getElementById('access-password').value.trim();
+            if (password === correctPassword) {
+                document.getElementById('password-modal').style.display = 'none';
+                document.body.style.overflow = 'auto';
+            } else {
+                document.getElementById('password-error').style.display = 'block';
+                document.getElementById('access-password').value = '';
+                document.getElementById('access-password').focus();
+            }
+        }
+        
+        // Allow Enter key to submit password
+        document.getElementById('access-password').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') verifyPassword();
+        });
+        
+        // Set effective date
+        document.getElementById('effective-date').textContent = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+        
+        // Enable submit button when all conditions met
+        const signatureInput = document.getElementById('client-signature');
+        const agreeCheckbox = document.getElementById('agree-terms');
+        const confirmCheckbox = document.getElementById('confirm-age');
+        const submitBtn = document.getElementById('submit-btn');
+        
+        function checkForm() {
+            const isValid = signatureInput.value.trim().length > 0 && agreeCheckbox.checked && confirmCheckbox.checked;
+            submitBtn.disabled = !isValid;
+        }
+        
+        signatureInput.addEventListener('input', checkForm);
+        agreeCheckbox.addEventListener('change', checkForm);
+        confirmCheckbox.addEventListener('change', checkForm);
+        
+        // Update signature display
+        signatureInput.addEventListener('input', function() {
+            document.getElementById('client-sig-display').textContent = this.value;
+        });
+        
+        function submitAgreement() {
+            const signature = signatureInput.value.trim();
+            const timestamp = new Date().toISOString();
+            
+            // Create submission object
+            const submission = {
+                client_name: signature,
+                timestamp: timestamp,
+                effective_date: document.getElementById('effective-date').textContent,
+                status: 'executed'
+            };
+            
+            // Store in localStorage (in production, send to server)
+            let submissions = JSON.parse(localStorage.getItem('retainer_submissions') || '[]');
+            submissions.push(submission);
+            localStorage.setItem('retainer_submissions', JSON.stringify(submissions));
+            
+            // Update dates
+            document.getElementById('client-date').textContent = new Date().toLocaleDateString();
+            document.getElementById('firm-date').textContent = 'Pending';
+            
+            // Disable form
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Agreement Executed';
+            signatureInput.readOnly = true;
+            agreeCheckbox.disabled = true;
+            confirmCheckbox.disabled = true;
+            
+            // Redirect to clearing page after 2 seconds
+            setTimeout(function() {
+                window.location.href = 'clearing.html';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

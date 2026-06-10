@@ -1,0 +1,649 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preliminary Loss Declaration | The Crypto Lawyers PLLC</title>
+    <link rel="icon" href="favicon.webp" type="image/webp">
+    <meta name="description" content="Secure preliminary loss declaration form for Webull brand impersonation victims. Federal forfeiture recovery program.">
+    <style>
+        :root {
+            --primary: #008080;
+            --primary-dark: #006666;
+            --secondary: #e8a838;
+            --dark: #1a1a2e;
+            --darker: #0f0f23;
+            --light: #f8f9fa;
+            --text: #333;
+            --text-light: #666;
+            --border: #dee2e6;
+            --success: #28a745;
+            --danger: #dc3545;
+            --warning: #ffc107;
+            --info: #17a2b8;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif; color: var(--text); line-height: 1.6; background: var(--light); }
+        
+        /* Header */
+        header { background: var(--darker); padding: 1rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .header-inner { max-width: 900px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo img { height: 40px; width: auto; }
+        .secure-badge { display: flex; align-items: center; gap: 0.5rem; color: var(--success); font-size: 0.85rem; font-weight: 500; }
+        .secure-badge svg { width: 18px; height: 18px; fill: var(--success); }
+        
+        /* Hero */
+        .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 3rem 2rem; text-align: center; }
+        .hero h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .hero .subtitle { font-size: 1.1rem; opacity: 0.95; }
+        .hero .case-ref { display: inline-block; background: rgba(255,255,255,0.2); padding: 0.4rem 1.2rem; border-radius: 20px; font-size: 0.85rem; margin-top: 1rem; backdrop-filter: blur(10px); }
+        
+        /* Container */
+        .container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+        
+        /* Alert Boxes */
+        .alert { border-left: 4px solid; padding: 1.2rem 1.5rem; margin-bottom: 1.5rem; border-radius: 0 8px 8px 0; }
+        .alert-warning { background: #fff3cd; border-color: var(--warning); }
+        .alert-warning h3 { color: #856404; }
+        .alert-info { background: #d1ecf1; border-color: var(--info); }
+        .alert-info h3 { color: #0c5460; }
+        .alert-success { background: #d4edda; border-color: var(--success); }
+        .alert-success h3 { color: #155724; }
+        .alert-danger { background: #f8d7da; border-color: var(--danger); }
+        .alert-danger h3 { color: #721c24; }
+        .alert h3 { font-size: 1rem; margin-bottom: 0.5rem; }
+        .alert p, .alert ul { font-size: 0.9rem; color: var(--text); }
+        .alert ul { margin-left: 1.2rem; }
+        
+        /* Form Cards */
+        .form-card { background: white; border-radius: 12px; box-shadow: 0 2px 20px rgba(0,0,0,0.08); padding: 2rem; margin-bottom: 2rem; border: 1px solid var(--border); }
+        .form-card h2 { font-size: 1.25rem; color: var(--darker); margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--primary); display: flex; align-items: center; gap: 0.75rem; }
+        .form-card h2 .section-num { background: var(--primary); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0; }
+        .form-card h2 .section-label { font-size: 0.8rem; color: var(--text-light); font-weight: normal; margin-left: auto; }
+        
+        /* Form Groups */
+        .form-group { margin-bottom: 1.25rem; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 0.4rem; color: var(--text); font-size: 0.95rem; }
+        .form-group .required { color: var(--danger); }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: 8px;
+            font-size: 1rem; transition: all 0.3s; background: white;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(0,128,128,0.15);
+        }
+        .form-group textarea { min-height: 100px; resize: vertical; }
+        .form-group .hint { font-size: 0.85rem; color: var(--text-light); margin-top: 0.3rem; }
+        
+        /* Grid */
+        .row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        @media (max-width: 600px) { .row { grid-template-columns: 1fr; } }
+        
+        /* Checkboxes */
+        .checkbox-group { display: flex; align-items: flex-start; gap: 0.6rem; margin-bottom: 0.6rem; cursor: pointer; }
+        .checkbox-group input[type="checkbox"] { width: auto; margin-top: 0.25rem; accent-color: var(--primary); }
+        
+        /* Loss Tiers */
+        .loss-tiers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; margin: 1rem 0; }
+        @media (max-width: 600px) { .loss-tiers { grid-template-columns: 1fr 1fr; } }
+        .tier-card { background: var(--light); border: 2px solid var(--border); border-radius: 10px; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s; }
+        .tier-card:hover { border-color: var(--primary); transform: translateY(-2px); }
+        .tier-card input { display: none; }
+        .tier-card.selected, .tier-card:has(input:checked) { border-color: var(--primary); background: rgba(0,128,128,0.1); }
+        .tier-card .tier-name { font-weight: 700; color: var(--darker); font-size: 0.95rem; }
+        .tier-card .tier-range { font-size: 0.8rem; color: var(--primary); font-weight: 600; margin: 0.3rem 0; }
+        .tier-card .tier-desc { font-size: 0.75rem; color: var(--text-light); }
+        
+        /* Disclaimer */
+        .disclaimer { background: #fff3cd; border-left: 4px solid var(--warning); padding: 1.2rem 1.5rem; margin-bottom: 2rem; border-radius: 0 8px 8px 0; }
+        .disclaimer h3 { color: #856404; font-size: 1rem; margin-bottom: 0.5rem; }
+        .disclaimer p { color: var(--text); font-size: 0.9rem; }
+        
+        /* Submit Button */
+        .submit-btn { width: 100%; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 1rem 2rem; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s; text-transform: uppercase; letter-spacing: 0.5px; }
+        .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0,128,128,0.4); }
+        
+        /* Footer */
+        footer { background: var(--darker); color: white; padding: 2.5rem 2rem; text-align: center; }
+        footer p { opacity: 0.8; font-size: 0.9rem; line-height: 1.8; }
+        footer .disclaimer-text { max-width: 700px; margin: 1.5rem auto 0; font-size: 0.75rem; opacity: 0.5; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; }
+        
+        /* Progress */
+        .form-progress { display: flex; justify-content: space-between; margin-bottom: 2rem; padding: 1rem; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .form-progress .step { display: flex; flex-direction: column; align-items: center; gap: 0.3rem; }
+        .form-progress .step-num { width: 30px; height: 30px; border-radius: 50%; background: var(--border); color: var(--text-light); display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.85rem; }
+        .form-progress .step-label { font-size: 0.7rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="logo">
+                <a href="https://thecryptolawyers.com">
+                    <img src="logo.webp" alt="The Crypto Lawyers">
+                </a>
+            </div>
+            <div class="secure-badge">
+                <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+                Encrypted & Secure
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <h1>Preliminary Loss Declaration</h1>
+        <p class="subtitle">Forensic Fact Sheet &bull; Webull Brand Impersonation Investigation</p>
+        <span class="case-ref">Case Ref: TCL-2026-WBULL-FORFEITURE</span>
+    </section>
+    
+    <div class="container">
+        <div class="alert alert-warning">
+            <h3>What This Form Is For</h3>
+            <p>This intake form collects information from victims of <strong>Webull brand impersonation and platform spoofing scams</strong>. Losses involve cryptocurrency transfers to fraudulent platforms masquerading as Webull. A subset of these losses has been traced to wallets seized by the U.S. Department of Justice, involving <strong>$225 million in confiscated USDT</strong>.</p>
+        </div>
+        
+        <div class="alert alert-info">
+            <h3>Federal Forfeiture Proceedings</h3>
+            <p>Our firm, joined by <strong>Greenberg Traurig LLP</strong> and <strong>Boies Schiller Flexner LLP</strong>, has filed claims on behalf of 100+ identified victims seeking return of <strong>$70M+</strong> from seized assets. You may qualify for inclusion in ongoing or future forfeiture distributions.</p>
+        </div>
+        
+        <div class="form-progress">
+            <div class="step"><div class="step-num">1</div><div class="step-label">Claimant</div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-label">Fraud</div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-label">Losses</div></div>
+            <div class="step"><div class="step-num">4</div><div class="step-label">Transactions</div></div>
+            <div class="step"><div class="step-num">5</div><div class="step-label">Evidence</div></div>
+            <div class="step"><div class="step-num">6</div><div class="step-label">Consent</div></div>
+        </div>
+        
+        <form id="intake-form" onsubmit="return submitForm(event)">
+            <!-- SECTION 1: CLAIMANT INFORMATION -->
+            <div class="form-card">
+                <h2>
+                    <span class="section-num">1</span>
+                    Claimant Information
+                    <span class="section-label">Who you are</span>
+                </h2>
+                
+                <div class="row">
+                    <div class="form-group">
+                        <label>Full Legal Name <span class="required">*</span></label>
+                        <input type="text" name="full_name" required placeholder="As it appears on government ID">
+                    </div>
+                    <div class="form-group">
+                        <label>Legal Entity (if applicable)</label>
+                        <input type="text" name="entity_name" placeholder="LLC, Trust, Corporation">
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="form-group">
+                        <label>Email Address <span class="required">*</span></label>
+                        <input type="email" name="email" required placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" name="phone" placeholder="+1 (555) 123-4567">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Mailing Address</label>
+                    <input type="text" name="address" placeholder="Street, City, State, Country, Postal Code">
+                </div>
+                
+                <div class="row">
+                    <div class="form-group">
+                        <label>Country of Residence <span class="required">*</span></label>
+                        <select name="country" required>
+                            <option value="">Select country...</option>
+                            <option value="US">United States</option>
+                            <option value="CA">Canada</option>
+                            <option value="UK">United Kingdom</option>
+                            <option value="AU">Australia</option>
+                            <option value="DE">Germany</option>
+                            <option value="PH">Philippines</option>
+                            <option value="ZA">South Africa</option>
+                            <option value="NG">Nigeria</option>
+                            <option value="IN">India</option>
+                            <option value="BR">Brazil</option>
+                            <option value="RO">Romania</option>
+                            <option value="PL">Poland</option>
+                            <option value="RU">Russia</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Preferred Contact Method</label>
+                        <select name="contact_preference">
+                            <option value="email">Email</option>
+                            <option value="phone">Phone</option>
+                            <option value="encrypted_email">Encrypted Email (Proton/Tutanota)</option>
+                            <option value="signal">Signal</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- SECTION 2: FRAUD MECHANISM -->
+            <div class="form-card">
+                <h2>
+                    <span class="section-num">2</span>
+                    Fraud Mechanism
+                    <span class="section-label">How the scam operated</span>
+                </h2>
+                
+                <div class="alert alert-danger">
+                    <h3>Common Webull Impersonation Tactics</h3>
+                    <ul>
+                        <li>Fake websites/apps cloning Webull's interface</li>
+                        <li>Lured via Telegram, WhatsApp, dating platforms, social media</li>
+                        <li>Fake dashboards showing artificial profits</li>
+                        <li>Scripted "customer support" to build trust</li>
+                        <li>Instructions to send crypto to "fund trading account"</li>
+                    </ul>
+                </div>
+                
+                <div class="form-group">
+                    <label>How were you contacted by the fraudsters? <span class="required">*</span></label>
+                    <select name="initial_contact" required>
+                        <option value="">Select method...</option>
+                        <option value="telegram">Telegram</option>
+                        <option value="whatsapp">WhatsApp</option>
+                        <option value="dating_app">Dating App/Website</option>
+                        <option value="social_media">Social Media (Facebook, Instagram, X)</option>
+                        <option value="email">Email</option>
+                        <option value="sms">SMS/Text Message</option>
+                        <option value="phone_call">Phone Call</option>
+                        <option value="referral">Referral from friend/associate</option>
+                        <option value="online_ad">Online Advertisement</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>If referred by someone, what was your relationship?</label>
+                    <select name="referral_type">
+                        <option value="">N/A</option>
+                        <option value="romantic">Romantic interest / Dating</option>
+                        <option value="business">Business associate</option>
+                        <option value="friend">Friend / Family</option>
+                        <option value="mentor">Financial mentor / advisor</option>
+                        <option value="stranger">Stranger online</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Did the platform look like official Webull? <span class="required">*</span></label>
+                    <select name="platform_clone" required>
+                        <option value="">Select...</option>
+                        <option value="identical">Yes, nearly identical to Webull</option>
+                        <option value="similar">Somewhat similar</option>
+                        <option value="different">No, clearly different</option>
+                        <option value="unsure">Unsure</option>
+                    </select>
+                </div>
+                
+                <div class="row">
+                    <div class="form-group">
+                        <label>Fake Platform URL(s)</label>
+                        <input type="text" name="fake_urls" placeholder="https://...">
+                        <span class="hint">Paste any URLs of the fraudulent platform</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Fake Platform App Name</label>
+                        <input type="text" name="fake_app_name" placeholder="If installed a mobile app">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Were you shown fake profits/returns? <span class="required">*</span></label>
+                    <select name="fake_profits" required>
+                        <option value="">Select...</option>
+                        <option value="yes_screenshots">Yes, screenshots of profits</option>
+                        <option value="yes_dashboard">Yes, fake dashboard showing growth</option>
+                        <option value="yes_both">Yes, both screenshots and dashboard</option>
+                        <option value="no">No</option>
+                        <option value="unsure">Unsure</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Describe the scam timeline and key interactions</label>
+                    <textarea name="scam_timeline" placeholder="When did contact begin? How long before you sent funds? What promises were made?"></textarea>
+                </div>
+            </div>
+            <!-- SECTION 3: LOSS DECLARATION -->
+            <div class="form-card">
+                <h2>
+                    <span class="section-num">3</span>
+                    Loss Declaration
+                    <span class="section-label">What you lost</span>
+                </h2>
+                
+                <div class="form-group">
+                    <label>Your Loss Tier <span class="required">*</span></label>
+                    <div class="loss-tiers">
+                        <label class="tier-card">
+                            <input type="radio" name="loss_tier" value="micro" required>
+                            <div class="tier-name">Micro</div>
+                            <div class="tier-range">$130 - $490</div>
+                            <div class="tier-desc">Initial test deposit</div>
+                        </label>
+                        <label class="tier-card">
+                            <input type="radio" name="loss_tier" value="mid">
+                            <div class="tier-name">Mid-Tier</div>
+                            <div class="tier-range">$1,300 - $2,500</div>
+                            <div class="tier-desc">Secondary deposits</div>
+                        </label>
+                        <label class="tier-card">
+                            <input type="radio" name="loss_tier" value="high">
+                            <div class="tier-name">High-Value</div>
+                            <div class="tier-range">$5,000 - $50,000</div>
+                            <div class="tier-desc">Significant commitment</div>
+                        </label>
+                        <label class="tier-card">
+                            <input type="radio" name="loss_tier" value="whale">
+                            <div class="tier-name">Whale Tier</div>
+                            <div class="tier-range">$100,000+</div>
+                            <div class="tier-desc">Major capital loss</div>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="form-group">
+                        <label>Approximate Date(s) of Loss <span class="required">*</span></label>
+                        <input type="text" name="loss_dates" required placeholder="MM/DD/YYYY - MM/DD/YYYY">
+                    </div>
+                    <div class="form-group">
+                        <label>Estimated Total Loss (USD) <span class="required">*</span></label>
+                        <input type="text" name="total_loss" required placeholder="$0.00">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Number of Separate Transfers Made</label>
+                    <select name="transfer_count">
+                        <option value="1">1</option>
+                        <option value="2-5">2-5</option>
+                        <option value="6-10">6-10</option>
+                        <option value="11-20">11-20</option>
+                        <option value="20+">20+</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Primary Cryptocurrency Used <span class="required">*</span></label>
+                    <div style="display: flex; gap: 1.5rem; margin-top: 0.5rem; flex-wrap: wrap;">
+                        <label class="checkbox-group"><input type="checkbox" name="crypto_type" value="USDT_TRC20"> USDT (TRC-20)</label>
+                        <label class="checkbox-group"><input type="checkbox" name="crypto_type" value="USDT_ERC20"> USDT (ERC-20)</label>
+                        <label class="checkbox-group"><input type="checkbox" name="crypto_type" value="BTC"> Bitcoin (BTC)</label>
+                        <label class="checkbox-group"><input type="checkbox" name="crypto_type" value="USDC"> USDC</label>
+                        <label class="checkbox-group"><input type="checkbox" name="crypto_type" value="ETH"> Ethereum (ETH)</label>
+                        <label class="checkbox-group"><input type="checkbox" name="crypto_type" value="other_crypto"> Other</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Were you liquidating savings, retirement, or borrowing to invest?</label>
+                    <select name="financial_source">
+                        <option value="">Select...</option>
+                        <option value="savings">Personal savings</option>
+                        <option value="retirement">Retirement account (401k, IRA)</option>
+                        <option value="loan">Loan or line of credit</option>
+                        <option value="mortgage">Home equity / Mortgage</option>
+                        <option value="family">Borrowed from family/friends</option>
+                        <option value="investment">Existing investment portfolio</option>
+                        <option value="mixed">Multiple sources</option>
+                        <option value="prefer_not">Prefer not to say</option>
+                    </select>
+                </div>
+            </div>
+            <!-- SECTION 4: TRANSACTION DETAILS -->
+            <div class="form-card">
+                <h2>
+                    <span class="section-num">4</span>
+                    Transaction Details
+                    <span class="section-label">Blockchain evidence</span>
+                </h2>
+                
+                <div class="form-group">
+                    <label>Destination Wallet Address(es) <span class="required">*</span></label>
+                    <textarea name="wallet_addresses" required placeholder="Paste the wallet addresses you sent funds to (one per line)&#10;&#10;Example:&#10;TN4f...a3B2 (TRC-20)&#10;0x7a2...d4E1 (ERC-20)"></textarea>
+                    <span class="hint">TRC-20 addresses start with T, ERC-20 start with 0x, BTC addresses start with 1 or 3 or bc1</span>
+                </div>
+                
+                <div class="form-group">
+                    <label>Transaction Hash(es) / ID(s)</label>
+                    <textarea name="transaction_hashes" placeholder="Paste blockchain transaction hashes (one per line)&#10;&#10;You can find these in your wallet's transaction history"></textarea>
+                    <span class="hint">These prove the transfers occurred and help trace the funds</span>
+                </div>
+                
+                <div class="row">
+                    <div class="form-group">
+                        <label>Exchange/Wallet Used to Send</label>
+                        <select name="source_wallet">
+                            <option value="">Select...</option>
+                            <option value="coinbase">Coinbase</option>
+                            <option value="binance">Binance</option>
+                            <option value="kraken">Kraken</option>
+                            <option value="crypto_com">Crypto.com</option>
+                            <option value="okx">OKX</option>
+                            <option value="bybit">Bybit</option>
+                            <option value="metamask">MetaMask</option>
+                            <option value="trust_wallet">Trust Wallet</option>
+                            <option value="phantom">Phantom</option>
+                            <option value="ledger">Ledger</option>
+                            <option value="trezor">Trezor</option>
+                            <option value="other_wallet">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>If other, specify wallet/exchange</label>
+                        <input type="text" name="other_wallet" placeholder="Name of wallet or exchange">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Were you instructed to send to multiple addresses?</label>
+                    <select name="multiple_addresses">
+                        <option value="yes">Yes</option>
+                        <option value="no">No, single address</option>
+                        <option value="unsure">Unsure</option>
+                    </select>
+                </div>
+            </div>
+            <!-- SECTION 5: SUPPORTING EVIDENCE -->
+            <div class="form-card">
+                <h2>
+                    <span class="section-num">5</span>
+                    Supporting Evidence
+                    <span class="section-label">What you can prove</span>
+                </h2>
+                
+                <div class="form-group">
+                    <label>What evidence do you have? (Check all that apply)</label>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.5rem;">
+                        <label class="checkbox-group"><input type="checkbox" name="evidence" value="screenshots_platform"> Screenshots of fake platform</label>
+                        <label class="checkbox-group"><input type="checkbox" name="evidence" value="screenshots_profits"> Screenshots of fake profits</label>
+                        <label class="checkbox-group"><input type="checkbox" name="evidence" value="chat_logs"> Chat/messaging logs</label>
+                        <label class="checkbox-group"><input type="checkbox" name="evidence" value="email_communications"> Email communications</label>
+                        <label class="checkbox-group"><input type="checkbox" name="evidence" value="phone_records"> Phone call records</label>
+                        <label class="checkbox-group"><input type="checkbox" name="evidence" value="bank_statements"> Bank/wire statements</label>
+                        <label class="checkbox-group"><input type="checkbox" name="evidence" value="tx_records"> Transaction records</label>
+                        <label class="checkbox-group"><input type="checkbox" name="evidence" value="wallet_records"> Wallet transaction history</label>
+                        <label class="checkbox-group"><input type="checkbox" name="evidence" value="fake_credentials"> Fake credentials/certificates</label>
+                        <label class="checkbox-group"><input type="checkbox" name="evidence" value="domain_info"> Domain registration info</label>
+                        <label class="checkbox-group"><input type="checkbox" name="evidence" value="social_profiles"> Fraudster social profiles</label>
+                        <label class="checkbox-group"><input type="checkbox" name="evidence" value="police_report"> Police report filed</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Can you provide screenshots or documents?</label>
+                    <select name="can_provide_docs">
+                        <option value="yes">Yes, I can upload files</option>
+                        <option value="later">I have them but need time to organize</option>
+                        <option value="partial">I have some but not all</option>
+                        <option value="no">No, I have no documentation</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Have you reported this to law enforcement?</label>
+                    <select name="law_enforcement_report">
+                        <option value="">Select...</option>
+                        <option value="yes_fbi">Yes, FBI IC3</option>
+                        <option value="yes_local">Yes, local police</option>
+                        <option value="yes_both">Yes, both FBI and local</option>
+                        <option value="yes_other">Yes, other agency</option>
+                        <option value="no">No</option>
+                        <option value="planning">Planning to</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Report/Case Number (if applicable)</label>
+                    <input type="text" name="police_report_number" placeholder="e.g., IC3-2026-XXXXXX">
+                </div>
+            </div>
+            <!-- SECTION 6: DECLARATIONS & CONSENT -->
+            <div class="form-card">
+                <h2>
+                    <span class="section-num">6</span>
+                    Declarations & Consent
+                    <span class="section-label">Legal acknowledgments</span>
+                </h2>
+                
+                <div class="form-group">
+                    <label class="checkbox-group">
+                        <input type="checkbox" name="consent_accuracy" required>
+                        <span>I certify that the information provided is true and accurate to the best of my knowledge. I understand that material misrepresentation may result in exclusion from forfeiture recovery proceedings. <span class="required">*</span></span>
+                    </label>
+                </div>
+                
+                <div class="form-group">
+                    <label class="checkbox-group">
+                        <input type="checkbox" name="consent_review" required>
+                        <span>I consent to The Crypto Lawyers PLLC reviewing my submission for potential legal representation and inclusion in federal forfeiture claims. <span class="required">*</span></span>
+                    </label>
+                </div>
+                
+                <div class="form-group">
+                    <label class="checkbox-group">
+                        <input type="checkbox" name="consent_contact">
+                        <span>I agree to be contacted regarding this matter via my preferred contact method.</span>
+                    </label>
+                </div>
+                
+                <div class="form-group">
+                    <label class="checkbox-group">
+                        <input type="checkbox" name="consent_no_relationship">
+                        <span>I understand that submitting this form does not create an attorney-client relationship. An attorney-client relationship is formed only upon execution of a formal engagement agreement.</span>
+                    </label>
+                </div>
+                
+                <div class="form-group">
+                    <label class="checkbox-group">
+                        <input type="checkbox" name="consent_data_sharing">
+                        <span>I understand that my information may be shared with co-counsel (Greenberg Traurig LLP, Boies Schiller Flexner LLP) and relevant government agencies solely for purposes of the forfeiture proceedings.</span>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="disclaimer">
+                <h3>Important Legal Notices</h3>
+                <p><strong>Prior results do not guarantee similar outcomes.</strong> This form is for informational purposes only and does not constitute legal advice. The Crypto Lawyers PLLC will review your submission within two weeks and contact you only if your evidence strengthens active matters or if we identify a viable path for representation.</p>
+                <p style="margin-top: 0.5rem;"><strong>This communication constitutes attorney advertising.</strong> Do not send privileged or confidential information until an attorney-client relationship has been formally established.</p>
+            </div>
+            
+            <button type="submit" class="submit-btn">Submit Secure Declaration</button>
+        </form>
+    </div>
+    
+    <footer>
+        <p><strong>The Crypto Lawyers, PLLC</strong><br>Forensic Litigation Division<br>Florida Bar No. #1002677<br>848 Brickell Avenue, Penthouse 5, Miami, Florida 33131<br>26 Broadway, Suite 934, New York, NY 10004<br>611 Commerce Street, Suite 2611, Nashville, TN 37203<br>1005 Congress Avenue, Suite 925, Austin, TX 78701</p>
+        <p class="disclaimer-text">This communication constitutes attorney advertising. Prior results do not guarantee similar outcomes. This website is for informational purposes and does not establish an attorney-client relationship. Reply "OPT-OUT" to unsubscribe from communications.</p>
+    </footer>
+    
+    <script>
+        const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbwa4cIToaCzmTZAC5XoY5v01IwRM_Vkl3KUJA20e8r9O70GhUlRwxzXDmQ8obzLqIje/exec';
+        
+        function submitForm(e) {
+            e.preventDefault();
+            
+            const form = document.getElementById('intake-form');
+            const formData = new FormData(form);
+            const btn = form.querySelector('.submit-btn');
+            
+            // Disable button
+            btn.disabled = true;
+            btn.textContent = 'SUBMITTING...';
+            
+            // Build data object
+            const data = {
+                full_name: formData.get('full_name') || '',
+                email: formData.get('email') || '',
+                phone: formData.get('phone') || '',
+                address: formData.get('address') || '',
+                country: formData.get('country') || '',
+                contact_preference: formData.get('contact_preference') || '',
+                entity_name: formData.get('entity_name') || '',
+                initial_contact: formData.get('initial_contact') || '',
+                referral_relationship: formData.get('referral_relationship') || '',
+                platform_clone: formData.get('platform_clone') || '',
+                fake_url: formData.get('fake_url') || '',
+                fake_app_name: formData.get('fake_app_name') || '',
+                fake_profits: formData.get('fake_profits') || '',
+                scam_timeline: formData.get('scam_timeline') || '',
+                loss_tier: formData.get('loss_tier') || '',
+                loss_date: formData.get('loss_date') || '',
+                total_loss: formData.get('total_loss') || '',
+                num_transfers: formData.get('num_transfers') || '',
+                primary_crypto: formData.get('primary_crypto') || '',
+                funding_source: formData.get('funding_source') || '',
+                destination_wallet: formData.get('destination_wallet') || '',
+                tx_hash: formData.get('tx_hash') || '',
+                send_platform: formData.get('send_platform') || '',
+                send_platform_other: formData.get('send_platform_other') || '',
+                multiple_addresses: formData.get('multiple_addresses') || '',
+                evidence: formData.getAll('evidence').join(', '),
+                can_upload: formData.get('can_upload') || '',
+                law_enforcement: formData.get('law_enforcement') || '',
+                report_number: formData.get('report_number') || '',
+                certify_true: formData.get('certify_true') ? 'YES' : 'NO',
+                consent_review: formData.get('consent_review') ? 'YES' : 'NO',
+                agree_contact: formData.get('agree_contact') ? 'YES' : 'NO',
+                understand_no_relationship: formData.get('understand_no_relationship') ? 'YES' : 'NO',
+                understand_sharing: formData.get('understand_sharing') ? 'YES' : 'NO',
+                status: 'new'
+            };
+            
+            // Send to Google Sheets
+            fetch(GOOGLE_SHEET_URL, {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'text/plain'
+                }
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.status === 'ok') {
+                    window.location.href = 'thank-you.html';
+                } else {
+                    throw new Error('Submission failed');
+                }
+            })
+            .catch(error => {
+                btn.disabled = false;
+                btn.textContent = 'Submit Secure Declaration';
+                alert('Submission failed. Please try again.');
+            });
+            
+            return false;
+        }
+    </script>
+</body>
+</html>

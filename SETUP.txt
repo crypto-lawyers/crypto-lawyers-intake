@@ -1,0 +1,50 @@
+# GOOGLE SHEETS SETUP GUIDE
+
+## Step 1: Create Google Sheet
+1. Go to: https://sheets.google.com
+2. Click **+ Blank** to create new sheet
+3. Name it: **"Webull Intake Submissions"**
+
+## Step 2: Add Headers (Row 1)
+Copy and paste this into Row 1:
+
+```
+Timestamp	Case Ref	Full Name	Entity	Email	Phone	Address	Country	Contact Preference	Initial Contact	Referral Type	Platform Clone	Fake URLs	Fake App Name	Fake Profits	Scam Timeline	Loss Tier	Loss Dates	Total Loss	Transfer Count	Crypto Types	Financial Source	Wallet Addresses	Transaction Hashes	Source Wallet	Other Wallet	Multiple Addresses	Evidence Types	Can Provide Docs	Law Enforcement Report	Police Report Number	Consent Accuracy	Consent Review	Consent Contact	Consent No Relationship	Consent Data Sharing
+```
+
+## Step 3: Open Apps Script
+1. In your Google Sheet, click **Extensions** > **Apps Script**
+2. Delete any existing code in the editor
+3. Copy ALL the code from the file: `apps-script.js`
+4. Paste it into the Apps Script editor
+5. Click **Save** (disk icon)
+
+## Step 4: Deploy as Web App
+1. Click **Deploy** > **New deployment**
+2. Click the gear icon > Select **Web app**
+3. Description: "Form Submission Handler"
+4. Execute as: **Me**
+5. Who has access: **Anyone**
+6. Click **Deploy**
+7. **Copy the Web App URL** (looks like: https://script.google.com/macros/s/AKfyc.../exec)
+
+## Step 5: Update Your Form
+1. Open `index.html`
+2. Find this line:
+```
+action="https://formsubmit.co/thecryptolawyers.intake@gmail.com"
+```
+3. Replace with:
+```
+action="YOUR_WEB_APP_URL_HERE"
+```
+(Use the URL you copied in Step 4)
+
+## Step 6: Test
+1. Open `index.html` in browser
+2. Fill out and submit the form
+3. Check your Google Sheet — data should appear!
+
+## Done!
+Every submission automatically adds a new row to your spreadsheet.
+Export as CSV anytime: File > Download > Comma-separated values (.csv)

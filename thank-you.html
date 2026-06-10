@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Received | The Crypto Lawyers PLLC</title>
+    <link rel="icon" href="favicon.webp" type="image/webp">
+    <style>
+        :root {
+            --primary: #008080;
+            --primary-dark: #006666;
+            --secondary: #e8a838;
+            --dark: #1a1a2e;
+            --darker: #0f0f23;
+            --light: #f8f9fa;
+            --text: #333;
+            --text-light: #666;
+            --border: #dee2e6;
+            --success: #28a745;
+            --warning: #ffc107;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif; color: var(--text); line-height: 1.6; background: var(--light); min-height: 100vh; display: flex; flex-direction: column; }
+        
+        header { background: var(--darker); padding: 1rem 0; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .header-inner { max-width: 900px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo img { height: 40px; width: auto; }
+        .secure-badge { display: flex; align-items: center; gap: 0.5rem; color: var(--success); font-size: 0.85rem; font-weight: 500; }
+        .secure-badge svg { width: 18px; height: 18px; fill: var(--success); }
+        
+        .success-hero { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 3rem 2rem; text-align: center; }
+        .success-icon { width: 80px; height: 80px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; backdrop-filter: blur(10px); }
+        .success-icon svg { width: 50px; height: 50px; fill: white; }
+        .success-hero h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .success-hero .subtitle { font-size: 1rem; opacity: 0.9; }
+        
+        .container { max-width: 800px; margin: 0 auto; padding: 2rem; flex: 1; }
+        
+        .case-card { background: white; border-radius: 12px; box-shadow: 0 2px 20px rgba(0,0,0,0.08); padding: 2rem; margin-bottom: 2rem; border: 1px solid var(--border); text-align: center; }
+        .case-card .case-label { font-size: 0.85rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; }
+        .case-card .case-ref { font-size: 2.5rem; font-weight: 700; color: var(--primary); letter-spacing: 2px; margin-bottom: 1rem; }
+        .case-card .status { display: inline-flex; align-items: center; gap: 0.5rem; background: #fff3cd; color: #856404; padding: 0.5rem 1.5rem; border-radius: 20px; font-weight: 600; font-size: 0.9rem; }
+        .case-card .status-dot { width: 10px; height: 10px; background: var(--warning); border-radius: 50%; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        
+        .encrypted-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: #d4edda; color: #155724; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; margin-top: 1rem; }
+        .encrypted-badge svg { width: 16px; height: 16px; fill: #155724; }
+        
+        .info-card { background: white; border-radius: 12px; box-shadow: 0 2px 20px rgba(0,0,0,0.08); padding: 2rem; margin-bottom: 2rem; border: 1px solid var(--border); border-left: 4px solid var(--primary); }
+        .info-card h2 { font-size: 1.2rem; color: var(--darker); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
+        .info-card h2 .icon { width: 32px; height: 32px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .info-card h2 .icon svg { width: 18px; height: 18px; fill: white; }
+        .info-card p { font-size: 0.95rem; color: var(--text); margin-bottom: 1rem; }
+        .info-card ul { margin-left: 1.5rem; margin-bottom: 1rem; }
+        .info-card li { margin-bottom: 0.5rem; font-size: 0.95rem; }
+        
+        .warning-card { background: white; border-radius: 12px; box-shadow: 0 2px 20px rgba(0,0,0,0.08); padding: 2rem; margin-bottom: 2rem; border: 1px solid var(--border); border-left: 4px solid #dc3545; }
+        .warning-card h2 { font-size: 1.2rem; color: #721c24; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
+        .warning-card h2 .icon { width: 32px; height: 32px; background: #dc3545; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .warning-card h2 .icon svg { width: 18px; height: 18px; fill: white; }
+        .warning-card p { font-size: 0.95rem; color: var(--text); }
+        
+        .timeline { position: relative; padding-left: 2rem; }
+        .timeline::before { content: ''; position: absolute; left: 10px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+        .timeline-item { position: relative; margin-bottom: 1.5rem; }
+        .timeline-item::before { content: ''; position: absolute; left: -24px; top: 5px; width: 12px; height: 12px; background: var(--primary); border-radius: 50%; border: 2px solid white; box-shadow: 0 0 0 2px var(--primary); }
+        .timeline-item.pending::before { background: var(--border); box-shadow: 0 0 0 2px var(--border); }
+        .timeline-item h3 { font-size: 1rem; color: var(--darker); margin-bottom: 0.25rem; }
+        .timeline-item p { font-size: 0.9rem; color: var(--text-light); }
+        .timeline-item .time { font-size: 0.8rem; color: var(--primary); font-weight: 600; }
+        
+        .outcomes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem; }
+        .outcome-item { background: var(--light); border-radius: 10px; padding: 1.25rem; text-align: center; border: 1px solid var(--border); }
+        .outcome-item .outcome-icon { width: 48px; height: 48px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem; }
+        .outcome-item .outcome-icon svg { width: 24px; height: 24px; fill: white; }
+        .outcome-item h4 { font-size: 0.95rem; color: var(--darker); margin-bottom: 0.25rem; }
+        .outcome-item p { font-size: 0.8rem; color: var(--text-light); }
+        
+        .btn { display: inline-block; padding: 0.75rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,128,128,0.3); }
+        .btn-outline { border: 2px solid var(--primary); color: var(--primary); background: transparent; }
+        .btn-outline:hover { background: var(--primary); color: white; }
+        
+        .actions { display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap; }
+        
+        footer { background: var(--darker); color: white; padding: 2.5rem 2rem; text-align: center; }
+        footer p { opacity: 0.8; font-size: 0.9rem; line-height: 1.8; }
+        footer .disclaimer-text { max-width: 700px; margin: 1.5rem auto 0; font-size: 0.75rem; opacity: 0.5; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; }
+        
+        @media (max-width: 600px) {
+            .success-hero h1 { font-size: 1.4rem; }
+            .case-card .case-ref { font-size: 2rem; }
+            .actions { flex-direction: column; }
+            .btn { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="logo">
+                <a href="https://thecryptolawyers.com">
+                    <img src="logo.webp" alt="The Crypto Lawyers">
+                </a>
+            </div>
+            <div class="secure-badge">
+                <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+                End-to-End Encrypted
+            </div>
+        </div>
+    </header>
+    
+    <section class="success-hero">
+        <div class="success-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        </div>
+        <h1>Submission Received</h1>
+        <p class="subtitle">Your Preliminary Loss Declaration has been securely transmitted</p>
+    </section>
+    
+    <div class="container">
+        <div class="case-card">
+            <div class="case-label">Your Case Reference Number</div>
+            <div class="case-ref">WB156-26</div>
+            <div class="status">
+                <span class="status-dot"></span>
+                Status: Under Review
+            </div>
+            <div class="encrypted-badge">
+                <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+                Your submission has been encrypted and received
+            </div>
+        </div>
+        
+        <div class="warning-card">
+            <h2>
+                <span class="icon">
+                    <svg viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
+                </span>
+                Important Notice
+            </h2>
+            <p>Submission of this form does not constitute an attorney-client relationship or a guarantee of recovery. To protect the integrity of our filing group, we maintain strict evidentiary standards. We decline a significant number of claims that do not establish a sufficient <strong>"Nexus of Liability"</strong> to <strong>WEBULL CORPORATION</strong>.</p>
+        </div>
+        
+        <div class="info-card">
+            <h2>
+                <span class="icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                </span>
+                What Happens Next
+            </h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="time">Immediate</span>
+                    <h3>Submission Encrypted & Logged</h3>
+                    <p>Your evidence has been securely stored in our case management system.</p>
+                </div>
+                <div class="timeline-item pending">
+                    <span class="time">Within 48 Hours</span>
+                    <h3>Initial Triage Review</h3>
+                    <p>Our intake team will perform a preliminary review of your submission for completeness.</p>
+                </div>
+                <div class="timeline-item pending">
+                    <span class="time">Within 2 Weeks</span>
+                    <h3>Forensic Litigation Team Review</h3>
+                    <p>Our Forensic Litigation Team will review your evidence to determine if your specific case qualifies for the Pre-Litigation Demand group.</p>
+                </div>
+                <div class="timeline-item pending">
+                    <span class="time">Following Review</span>
+                    <h3>Outcome Notification</h3>
+                    <p>You will be contacted if your evidence strengthens active matters or if we identify a viable path for representation.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-card">
+            <h2>
+                <span class="icon">
+                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                </span>
+                Possible Outcomes
+            </h2>
+            <div class="outcomes-grid">
+                <div class="outcome-item">
+                    <div class="outcome-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    </div>
+                    <h4>Accepted</h4>
+                    <p>Your claim is added to our active forfeiture filing group</p>
+                </div>
+                <div class="outcome-item">
+                    <div class="outcome-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                    </div>
+                    <h4>Additional Evidence Requested</h4>
+                    <p>We may request supplemental documentation to strengthen your claim</p>
+                </div>
+                <div class="outcome-item">
+                    <div class="outcome-icon" style="background: #6c757d;">
+                        <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                    </div>
+                    <h4>Declined</h4>
+                    <p>Your claim does not meet our evidentiary threshold for this proceeding</p>
+                </div>
+                <div class="outcome-item">
+                    <div class="outcome-icon" style="background: var(--secondary);">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    </div>
+                    <h4>Referred</h4>
+                    <p>Your case may be referred to co-counsel if it falls outside our current scope</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="actions">
+            <a href="https://www.newswire.com/news/the-crypto-lawyers-pllc-seeks-recovery-of-stolen-funds-for-more-than-22641283" class="btn btn-primary" target="_blank" rel="noopener">Read About Our Work</a>
+        </div>
+    </div>
+    
+    <footer>
+        <p><strong>The Crypto Lawyers, PLLC</strong><br>Forensic Litigation Division<br>Florida Bar No. #1002677<br>848 Brickell Avenue, Penthouse 5, Miami, Florida 33131</p>
+        <p class="disclaimer-text">This communication constitutes attorney advertising. Prior results do not guarantee similar outcomes. This website is for informational purposes and does not establish an attorney-client relationship.</p>
+    </footer>
+</body>
+</html>

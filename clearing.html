@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Clearing Instructions | The Crypto Lawyers PLLC</title>
+    <link rel="icon" href="favicon.webp" type="image/webp">
+    <style>
+        :root {
+            --primary: #008080;
+            --primary-dark: #006666;
+            --dark: #1a1a2e;
+            --darker: #0f0f23;
+            --light: #f8f9fa;
+            --text: #333;
+            --text-light: #666;
+            --border: #dee2e6;
+            --success: #28a745;
+            --danger: #dc3545;
+            --warning: #ffc107;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif; color: var(--text); line-height: 1.6; background: var(--light); }
+        
+        header { background: var(--darker); padding: 1rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .header-inner { max-width: 900px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo img { height: 40px; width: auto; }
+        .doc-type { color: var(--primary); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .container { max-width: 800px; margin: 0 auto; padding: 3rem 2rem; }
+        
+        .doc-header { text-align: center; margin-bottom: 3rem; }
+        .doc-header h1 { font-size: 1.8rem; color: var(--darker); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 2px; }
+        .doc-header .firm-name { font-size: 0.9rem; color: var(--text-light); margin-bottom: 1.5rem; }
+        
+        .case-info { background: white; border-radius: 12px; box-shadow: 0 2px 20px rgba(0,0,0,0.08); padding: 2rem; margin-bottom: 2rem; border: 1px solid var(--border); }
+        .case-info-row { display: flex; justify-content: space-between; padding: 0.75rem 0; border-bottom: 1px solid var(--border); }
+        .case-info-row:last-child { border-bottom: none; }
+        .case-info-row.header { background: var(--darker); color: white; padding: 0.75rem 1rem; margin: 0 -2rem; border-radius: 8px; font-weight: 600; font-size: 0.85rem; letter-spacing: 0.5px; border-bottom: none; }
+        .case-info-row.total { background: #d4edda; padding: 0.75rem 1rem; margin: 0 -2rem; border-radius: 8px; font-weight: 700; border-bottom: none; }
+        .case-info-label { font-weight: 600; color: var(--text-light); }
+        .case-info-value { font-weight: 600; color: var(--darker); }
+        .case-info-value.amount { font-size: 1.3rem; color: var(--primary); }
+        
+        .form-card { background: white; border-radius: 12px; box-shadow: 0 2px 20px rgba(0,0,0,0.08); padding: 2rem; margin-bottom: 2rem; border: 1px solid var(--border); }
+        .form-card h2 { font-size: 1.2rem; color: var(--darker); margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--primary); }
+        
+        .form-group { margin-bottom: 1.25rem; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 0.4rem; color: var(--text); }
+        .form-group .required { color: var(--danger); }
+        .form-group input, .form-group select { width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: 8px; font-size: 1rem; }
+        .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(0,128,128,0.15); }
+        .form-group .hint { font-size: 0.85rem; color: var(--text-light); margin-top: 0.3rem; }
+        
+        .checkbox-group { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem; cursor: pointer; }
+        .checkbox-group input { width: auto; margin-top: 0.25rem; accent-color: var(--primary); }
+        
+        .warning-box { background: #fff3cd; border-left: 4px solid var(--warning); padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+        .warning-box strong { color: #856404; }
+        
+        .danger-box { background: #f8d7da; border-left: 4px solid var(--danger); padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+        .danger-box strong { color: #721c24; }
+        
+        .info-box { background: #d1ecf1; border-left: 4px solid #17a2b8; padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+        .info-box strong { color: #0c5460; }
+        
+        .reconciliation-box { background: var(--light); border: 2px dashed var(--primary); border-radius: 10px; padding: 1.5rem; margin: 1.5rem 0; text-align: center; }
+        .reconciliation-box h3 { color: var(--primary); margin-bottom: 0.5rem; }
+        .reconciliation-amount { font-size: 2rem; font-weight: 700; color: var(--darker); margin: 1rem 0; }
+        .reconciliation-example { font-size: 0.9rem; color: var(--text-light); }
+        
+        .payment-card { background: var(--light); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; margin-bottom: 1rem; }
+        .payment-card h4 { color: var(--darker); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+        .payment-card .network { font-size: 0.85rem; color: var(--text-light); margin-bottom: 0.75rem; }
+        .payment-card .address { background: white; border: 1px solid var(--border); border-radius: 6px; padding: 0.75rem 1rem; font-family: 'Courier New', monospace; font-size: 0.9rem; word-break: break-all; cursor: pointer; transition: all 0.3s; }
+        .payment-card .address:hover { background: var(--primary); color: white; border-color: var(--primary); }
+        .payment-card .copy-hint { font-size: 0.8rem; color: var(--text-light); margin-top: 0.5rem; }
+        
+        .btn { width: 100%; padding: 1rem; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s; margin-top: 1rem; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: var(--primary-dark); }
+        .btn-primary:disabled { background: #ccc; cursor: not-allowed; }
+        .btn-success { background: var(--success); color: white; }
+        .btn-success:hover { background: #218838; }
+        
+        footer { background: var(--darker); color: white; padding: 2rem; text-align: center; margin-top: 2rem; }
+        footer p { opacity: 0.7; font-size: 0.85rem; }
+        
+        .hidden { display: none; }
+        
+        @media (max-width: 600px) {
+            .case-info-row { flex-direction: column; gap: 0.25rem; }
+            .doc-header h1 { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="logo">
+                <a href="https://thecryptolawyers.com">
+                    <img src="logo.webp" alt="The Crypto Lawyers">
+                </a>
+            </div>
+            <div class="doc-type">Financial Clearing</div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="doc-header">
+            <h1>Financial Clearing Instructions</h1>
+            <p class="firm-name">The Crypto Lawyers PLLC | 1005 Congress Avenue, Suite 925, Austin, Texas 78701</p>
+        </div>
+        
+        <!-- Step 1: Calculate Retainer -->
+        <div class="form-card" id="step1">
+            <h2>Step 1: Calculate Your Retainer</h2>
+            
+            <div class="form-group">
+                <label>Reported Loss Amount (USD) <span class="required">*</span></label>
+                <input type="text" id="loss-amount" placeholder="Enter your total loss in USD" oninput="calculateRetainer()">
+                <span class="hint">Enter the approximate total amount you lost in the scam</span>
+            </div>
+            
+            <div class="case-info" id="retainer-calculation" style="display: none;">
+                <div class="case-info-row">
+                    <span class="case-info-label">Case Reference</span>
+                    <span class="case-info-value">WB156-26</span>
+                </div>
+                <div class="case-info-row">
+                    <span class="case-info-label">Status</span>
+                    <span class="case-info-value" style="color: var(--warning);">PENDING CLEARANCE</span>
+                </div>
+                <div class="case-info-row">
+                    <span class="case-info-label">Retainer Tier</span>
+                    <span class="case-info-value" id="tier-label">--</span>
+                </div>
+                <div class="case-info-row">
+                    <span class="case-info-label">Amount Due</span>
+                    <span class="case-info-value amount" id="retainer-amount">$0.00</span>
+                </div>
+                <div class="case-info-row">
+                    <span class="case-info-label">Nature of Funds</span>
+                    <span class="case-info-value">Client Trust Deposit</span>
+                </div>
+            </div>
+            
+            <div class="case-info" id="recovery-calculation" style="display: none;">
+                <div class="case-info-row header">
+                    <span class="case-info-label">ESTIMATED RECOVERY ANALYSIS</span>
+                </div>
+                <div class="case-info-row">
+                    <span class="case-info-label">Your Reported Loss</span>
+                    <span class="case-info-value" id="est-loss">$0.00</span>
+                </div>
+                <div class="case-info-row">
+                    <span class="case-info-label">Less: Upfront Retainer</span>
+                    <span class="case-info-value" style="color: var(--error);" id="est-retainer">-$0.00</span>
+                </div>
+                <div class="case-info-row">
+                    <span class="case-info-label">Less: Contingency Fee (15%)</span>
+                    <span class="case-info-value" style="color: var(--error);" id="est-contingency">-$0.00</span>
+                </div>
+                <div class="case-info-row total">
+                    <span class="case-info-label">Minimum Net Recovery</span>
+                    <span class="case-info-value amount" id="est-net-min">$0.00</span>
+                </div>
+                <div class="case-info-row header" style="margin-top: 15px;">
+                    <span class="case-info-label">POTENTIAL SETTLEMENT SCENARIOS</span>
+                </div>
+                <div class="case-info-row">
+                    <span class="case-info-label">Conservative (1.5x damages)</span>
+                    <span class="case-info-value" id="est-recovery-low">$0.00</span>
+                </div>
+                <div class="case-info-row">
+                    <span class="case-info-label">Moderate (3x penalties)</span>
+                    <span class="case-info-value" id="est-recovery-mid">$0.00</span>
+                </div>
+                <div class="case-info-row">
+                    <span class="case-info-label">Aggressive (5x exemplary)</span>
+                    <span class="case-info-value amount" id="est-recovery-high">$0.00</span>
+                </div>
+                <div class="hint" style="margin-top: 10px; font-size: 11px;">
+                    * Estimates based on DOJ seizure of $225M USDT. Actual recovery depends on court approval and allocation.
+                </div>
+            </div>
+            
+            <button type="button" class="btn btn-primary" id="step1-btn" disabled onclick="showStep2()">Continue to Step 2</button>
+        </div>
+        
+        <!-- Step 2: Wallet Acknowledgment -->
+        <div class="form-card hidden" id="step2">
+            <h2>Step 2: Wallet Control Acknowledgment</h2>
+            
+            <div class="warning-box">
+                <strong>SECURITY NOTICE: DESIGNATION OF SETTLEMENT WALLET</strong>
+                <p style="margin-top: 0.5rem;">For your security and to prevent the misdirection of recovered assets, the wallet address you use to send this retainer will be permanently designated as your "Settlement Wallet." Any recovered principal, damages, or reparations will be distributed directly back to this exact wallet address.</p>
+            </div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="wallet-ack" required onchange="checkStep2()">
+                <label for="wallet-ack">I confirm I am sending this retainer from a wallet that I control, and I understand this wallet will automatically receive all future settlement funds and recoveries.</label>
+            </div>
+            
+            <div class="form-group">
+                <label>Your Wallet Address (Settlement Wallet) <span class="required">*</span></label>
+                <input type="text" id="wallet-address" placeholder="Enter the wallet address you will send from" oninput="checkStep2()">
+                <span class="hint">This address will be permanently linked to your case for all future distributions</span>
+            </div>
+            
+            <button type="button" class="btn btn-primary" id="step2-btn" disabled onclick="showStep3()">Continue to Step 3</button>
+        </div>
+        
+        <!-- Step 3: Reconciliation -->
+        <div class="form-card hidden" id="step3">
+            <h2>Step 3: Reconciliation Identifier (Critical)</h2>
+            
+            <div class="info-box">
+                <strong>Due to blockchain privacy, payments must be identifiable to your specific case file.</strong>
+                <p style="margin-top: 0.5rem;">You are instructed to append a unique cent value to your transaction.</p>
+            </div>
+            
+            <div class="reconciliation-box">
+                <h3>Your Unique Payment Amount</h3>
+                <p>Do not send exactly <span id="base-amount">$0.00</span></p>
+                <div class="reconciliation-amount" id="unique-amount">$0.00</div>
+                <p class="reconciliation-example">The cents (e.g., <strong>.42</strong>) act as your digital fingerprint for instant clearing</p>
+            </div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="recon-ack" required onchange="checkStep3()">
+                <label for="recon-ack">I understand I must send the exact unique amount shown above, not a rounded figure.</label>
+            </div>
+            
+            <button type="button" class="btn btn-primary" id="step3-btn" disabled onclick="showStep4()">Continue to Step 4</button>
+        </div>
+        
+        <!-- Step 4: Payment -->
+        <div class="form-card hidden" id="step4">
+            <h2>Step 4: Send Payment</h2>
+            
+            <div class="danger-box">
+                <strong>CRITICAL PROTOCOL: Verify Network Selection.</strong>
+                <p style="margin-top: 0.5rem;">Sending assets to an incompatible network (e.g., sending ERC-20 to a TRC-20 address) will result in the total and permanent loss of funds.</p>
+            </div>
+            
+            <div class="payment-card">
+                <h4>Bitcoin (BTC)</h4>
+                <p class="network">Network: NATIVE SEGWIT</p>
+                <div class="address" onclick="copyAddress(this)">bc1qdag27p86hat6tx05vwn59mh2drn2r2gk5z9qnq</div>
+                <p class="copy-hint">Click to copy</p>
+            </div>
+            
+            <div class="payment-card">
+                <h4>USDT (TRC-20)</h4>
+                <p class="network">Network: TRON (TRC-20)</p>
+                <div class="address" onclick="copyAddress(this)">TDGBttxMVh5geTyLtGgmpuaj6SNxtA3vp8</div>
+                <p class="copy-hint">Click to copy</p>
+            </div>
+            
+            <div class="payment-card">
+                <h4>USDC (ERC-20)</h4>
+                <p class="network">Network: ETHEREUM (ERC-20)</p>
+                <div class="address" onclick="copyAddress(this)">0x5E4603fa845eF032f8f76b14Bf1c691498b9e409</div>
+                <p class="copy-hint">Click to copy</p>
+            </div>
+        </div>
+        
+        <!-- Step 5: Confirmation -->
+        <div class="form-card hidden" id="step5">
+            <h2>Step 5: Payment Confirmation</h2>
+            
+            <div class="form-group">
+                <label>Transaction Hash (TXID) <span class="required">*</span></label>
+                <input type="text" id="tx-hash" placeholder="Paste your transaction hash here">
+                <span class="hint">Found in your wallet's transaction history after sending</span>
+            </div>
+            
+            <div class="form-group">
+                <label>Payment Method</label>
+                <select id="payment-method">
+                    <option value="BTC">Bitcoin (BTC)</option>
+                    <option value="USDT_TRC20">USDT (TRC-20)</option>
+                    <option value="USDC_ERC20">USDC (ERC-20)</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Amount Sent (USD Equivalent)</label>
+                <input type="text" id="amount-sent" readonly>
+            </div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="confirm-payment" required onchange="checkStep5()">
+                <label for="confirm-payment">I confirm I have sent the exact unique amount to the correct network address and provided the accurate transaction hash.</label>
+            </div>
+            
+            <button type="button" id="submit-btn" class="btn btn-success" disabled onclick="submitPayment()">Confirm Payment Sent</button>
+        </div>
+        
+        <!-- Success Message -->
+        <div class="form-card hidden" id="success-message">
+            <div style="text-align: center; padding: 2rem;">
+                <div style="width: 80px; height: 80px; background: var(--success); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                    <svg width="40" height="40" fill="white" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                </div>
+                <h2 style="color: var(--darker); margin-bottom: 1rem;">Payment Submitted Successfully</h2>
+                <p style="color: var(--text-light); margin-bottom: 0.5rem;">Case Reference: <strong>WB156-26</strong></p>
+                <p style="color: var(--text-light); margin-bottom: 0.5rem;">Status: <strong style="color: var(--warning);">UNDER REVIEW</strong></p>
+                <p style="color: var(--text-light); margin-top: 1.5rem;">Your payment is being verified on the blockchain. You will receive confirmation within 24-48 hours.</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p><strong>The Crypto Lawyers, PLLC</strong> | Forensic Litigation Division | Florida Bar No. #1002677</p>
+        <p>848 Brickell Avenue, Penthouse 5, Miami, Florida 33131 | 1005 Congress Avenue, Suite 925, Austin, Texas 78701</p>
+    </footer>
+    
+    <script>
+        let retainerBase = 0;
+        let uniqueCents = 0;
+        let tierLabel = '';
+        
+        function calculateRetainer() {
+            const input = document.getElementById('loss-amount').value.replace(/[^0-9.]/g, '');
+            const loss = parseFloat(input);
+            
+            if (isNaN(loss) || loss <= 0) {
+                document.getElementById('retainer-calculation').style.display = 'none';
+                document.getElementById('step1-btn').disabled = true;
+                return;
+            }
+            
+            // Tiered retainer pricing (optimized for conversion)
+            let retainer;
+            if (loss <= 130) {
+                retainer = 39;
+                tierLabel = 'Micro-Loss';
+            } else if (loss <= 500) {
+                retainer = 79;
+                tierLabel = 'Standard';
+            } else if (loss <= 1500) {
+                retainer = 129;
+                tierLabel = 'Mid-Tier';
+            } else if (loss <= 5000) {
+                retainer = 249;
+                tierLabel = 'Enhanced';
+            } else if (loss <= 25000) {
+                retainer = 499;
+                tierLabel = 'High-Value';
+            } else if (loss <= 100000) {
+                retainer = 1499;
+                tierLabel = 'Premium';
+            } else {
+                retainer = 2999;
+                tierLabel = 'Whale';
+            }
+            
+            retainerBase = retainer;
+            
+            // Calculate percentage of loss
+            const percentage = ((retainer / loss) * 100).toFixed(1);
+            
+            // Calculate estimated recovery (15% contingency after retainer)
+            const netRecovery = loss * 0.85; // Client keeps 85%
+            const estimatedLow = loss * 1.5; // 1.5x with damages
+            const estimatedMid = loss * 3;   // 3x with penalties
+            const estimatedHigh = loss * 5;  // 5x with exemplary damages
+            
+            // Generate random cents (01-99)
+            uniqueCents = Math.floor(Math.random() * 99) + 1;
+            const uniqueAmount = retainer + (uniqueCents / 100);
+            
+            // Display retainer
+            document.getElementById('retainer-amount').textContent = '$' + retainer.toFixed(2);
+            document.getElementById('tier-label').textContent = tierLabel + ' (' + percentage + '% of loss)';
+            document.getElementById('base-amount').textContent = '$' + retainer.toFixed(2);
+            document.getElementById('unique-amount').textContent = '$' + uniqueAmount.toFixed(2);
+            document.getElementById('amount-sent').value = '$' + uniqueAmount.toFixed(2);
+            
+            // Display estimated recovery
+            document.getElementById('est-loss').textContent = '$' + loss.toLocaleString('en-US', {minimumFractionDigits: 2});
+            document.getElementById('est-retainer').textContent = '-$' + retainer.toFixed(2);
+            document.getElementById('est-contingency').textContent = '-$' + (loss * 0.15).toFixed(2);
+            document.getElementById('est-net-min').textContent = '$' + Math.max(0, loss - retainer - (loss * 0.15)).toFixed(2);
+            document.getElementById('est-recovery-low').textContent = '$' + estimatedLow.toLocaleString('en-US', {minimumFractionDigits: 2});
+            document.getElementById('est-recovery-mid').textContent = '$' + estimatedMid.toLocaleString('en-US', {minimumFractionDigits: 2});
+            document.getElementById('est-recovery-high').textContent = '$' + estimatedHigh.toLocaleString('en-US', {minimumFractionDigits: 2});
+            
+            document.getElementById('retainer-calculation').style.display = 'block';
+            document.getElementById('recovery-calculation').style.display = 'block';
+            document.getElementById('step1-btn').disabled = false;
+        }
+        
+        function showStep2() {
+            document.getElementById('step2').classList.remove('hidden');
+            document.getElementById('step2').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function checkStep2() {
+            const ack = document.getElementById('wallet-ack').checked;
+            const wallet = document.getElementById('wallet-address').value.trim();
+            
+            document.getElementById('step2-btn').disabled = !(ack && wallet.length > 10);
+        }
+        
+        function showStep3() {
+            document.getElementById('step3').classList.remove('hidden');
+            document.getElementById('step3').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function checkStep3() {
+            const ack = document.getElementById('recon-ack').checked;
+            document.getElementById('step3-btn').disabled = !ack;
+        }
+        
+        function showStep4() {
+            document.getElementById('step4').classList.remove('hidden');
+            document.getElementById('step5').classList.remove('hidden');
+            document.getElementById('step4').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function checkStep5() {
+            const txHash = document.getElementById('tx-hash').value.trim();
+            const confirmed = document.getElementById('confirm-payment').checked;
+            
+            document.getElementById('submit-btn').disabled = !(txHash.length > 10 && confirmed);
+        }
+        
+        function copyAddress(element) {
+            const address = element.textContent;
+            navigator.clipboard.writeText(address).then(() => {
+                element.style.background = 'var(--success)';
+                element.style.color = 'white';
+                element.style.borderColor = 'var(--success)';
+                setTimeout(() => {
+                    element.style.background = 'white';
+                    element.style.color = 'var(--text)';
+                    element.style.borderColor = 'var(--border)';
+                }, 2000);
+            });
+        }
+        
+        function submitPayment() {
+            const submission = {
+                case_ref: 'WB156-26',
+                loss_amount: document.getElementById('loss-amount').value,
+                retainer_amount: retainerBase,
+                unique_amount: retainerBase + (uniqueCents / 100),
+                wallet_address: document.getElementById('wallet-address').value,
+                tx_hash: document.getElementById('tx-hash').value,
+                payment_method: document.getElementById('payment-method').value,
+                timestamp: new Date().toISOString()
+            };
+            
+            // Store in localStorage
+            let payments = JSON.parse(localStorage.getItem('payment_submissions') || '[]');
+            payments.push(submission);
+            localStorage.setItem('payment_submissions', JSON.stringify(payments));
+            
+            // Hide form, show success
+            document.getElementById('step1').classList.add('hidden');
+            document.getElementById('step2').classList.add('hidden');
+            document.getElementById('step3').classList.add('hidden');
+            document.getElementById('step4').classList.add('hidden');
+            document.getElementById('step5').classList.add('hidden');
+            document.getElementById('success-message').classList.remove('hidden');
+            
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
