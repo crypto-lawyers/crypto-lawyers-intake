@@ -157,7 +157,7 @@
             <div class="step"><div class="step-num">6</div><div class="step-label">Consent</div></div>
         </div>
         
-        <form id="intake-form" onsubmit="return submitForm(event)">
+        <form id="intake-form" onsubmit="return submitForm(event)" enctype="multipart/form-data">
             <!-- SECTION 1: CLAIMANT INFORMATION -->
             <div class="form-card">
                 <h2>
@@ -574,15 +574,26 @@
             e.preventDefault();
             
             const form = document.getElementById('intake-form');
-            const formData = new FormData(form);
             
-            // Build hidden form for direct submission
-            const hiddenForm = document.createElement('form');
-            hiddenForm.method = 'POST';
-            hiddenForm.action = GOOGLE_SHEET_URL;
-            hiddenForm.target = 'hidden-iframe';
+            // Change form action and encoding
+            form.method = 'POST';
+            form.action = GOOGLE_SHEET_URL;
+            form.target = 'hidden-iframe';
+            form.enctype = 'multipart/form-data';
             
-            // Add hidden iframe for submission
+            // Add hidden fields for checkboxes not checked
+            const checkboxes = form.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(cb => {
+                if (!cb.checked) {
+                    const hidden = document.createElement('input');
+                    hidden.type = 'hidden';
+                    hidden.name = cb.name;
+                    hidden.value = 'NO';
+                    form.appendChild(hidden);
+                }
+            });
+            
+            // Create iframe if not exists
             let iframe = document.getElementById('hidden-iframe');
             if (!iframe) {
                 iframe = document.createElement('iframe');
@@ -592,57 +603,13 @@
                 document.body.appendChild(iframe);
             }
             
-            // Add all form fields as hidden inputs
-            const fields = [
-                'full_name', 'email', 'phone', 'address', 'country', 'contact_preference',
-                'entity_name', 'initial_contact', 'referral_relationship', 'platform_clone',
-                'fake_url', 'fake_app_name', 'fake_profits', 'scam_timeline',
-                'loss_tier', 'loss_date', 'total_loss', 'num_transfers', 'primary_crypto', 'funding_source',
-                'destination_wallet', 'tx_hash', 'send_platform', 'send_platform_other', 'multiple_addresses',
-                'can_upload', 'law_enforcement', 'report_number'
-            ];
-            
-            fields.forEach(field => {
-                const input = document.createElement('input');
-                input.type = 'hidden';
-                input.name = field;
-                input.value = formData.get(field) || '';
-                hiddenForm.appendChild(input);
-            });
-            
-            // Add evidence checkboxes (multiple values)
-            const evidenceValues = formData.getAll('evidence');
-            const evidenceInput = document.createElement('input');
-            evidenceInput.type = 'hidden';
-            evidenceInput.name = 'evidence';
-            evidenceInput.value = evidenceValues.join(', ');
-            hiddenForm.appendChild(evidenceInput);
-            
-            // Add consent checkboxes
-            const consentFields = ['certify_true', 'consent_review', 'agree_contact', 'understand_no_relationship', 'understand_sharing'];
-            consentFields.forEach(field => {
-                const input = document.createElement('input');
-                input.type = 'hidden';
-                input.name = field;
-                input.value = formData.get(field) ? 'YES' : 'NO';
-                hiddenForm.appendChild(input);
-            });
-            
-            // Add status
-            const statusInput = document.createElement('input');
-            statusInput.type = 'hidden';
-            statusInput.name = 'status';
-            statusInput.value = 'new';
-            hiddenForm.appendChild(statusInput);
-            
-            document.body.appendChild(hiddenForm);
-            
-            // Submit and redirect on load
+            // On iframe load, redirect
             iframe.onload = function() {
                 window.location.href = 'thank-you.html';
             };
             
-            hiddenForm.submit();
+            // Submit
+            form.submit();
             return false;
         }
     </script>
