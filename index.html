@@ -575,73 +575,74 @@
             
             const form = document.getElementById('intake-form');
             const formData = new FormData(form);
-            const btn = form.querySelector('.submit-btn');
             
-            // Disable button
-            btn.disabled = true;
-            btn.textContent = 'SUBMITTING...';
+            // Build hidden form for direct submission
+            const hiddenForm = document.createElement('form');
+            hiddenForm.method = 'POST';
+            hiddenForm.action = GOOGLE_SHEET_URL;
+            hiddenForm.target = 'hidden-iframe';
             
-            // Build data object
-            const data = {
-                full_name: formData.get('full_name') || '',
-                email: formData.get('email') || '',
-                phone: formData.get('phone') || '',
-                address: formData.get('address') || '',
-                country: formData.get('country') || '',
-                contact_preference: formData.get('contact_preference') || '',
-                entity_name: formData.get('entity_name') || '',
-                initial_contact: formData.get('initial_contact') || '',
-                referral_relationship: formData.get('referral_relationship') || '',
-                platform_clone: formData.get('platform_clone') || '',
-                fake_url: formData.get('fake_url') || '',
-                fake_app_name: formData.get('fake_app_name') || '',
-                fake_profits: formData.get('fake_profits') || '',
-                scam_timeline: formData.get('scam_timeline') || '',
-                loss_tier: formData.get('loss_tier') || '',
-                loss_date: formData.get('loss_date') || '',
-                total_loss: formData.get('total_loss') || '',
-                num_transfers: formData.get('num_transfers') || '',
-                primary_crypto: formData.get('primary_crypto') || '',
-                funding_source: formData.get('funding_source') || '',
-                destination_wallet: formData.get('destination_wallet') || '',
-                tx_hash: formData.get('tx_hash') || '',
-                send_platform: formData.get('send_platform') || '',
-                send_platform_other: formData.get('send_platform_other') || '',
-                multiple_addresses: formData.get('multiple_addresses') || '',
-                evidence: formData.getAll('evidence').join(', '),
-                can_upload: formData.get('can_upload') || '',
-                law_enforcement: formData.get('law_enforcement') || '',
-                report_number: formData.get('report_number') || '',
-                certify_true: formData.get('certify_true') ? 'YES' : 'NO',
-                consent_review: formData.get('consent_review') ? 'YES' : 'NO',
-                agree_contact: formData.get('agree_contact') ? 'YES' : 'NO',
-                understand_no_relationship: formData.get('understand_no_relationship') ? 'YES' : 'NO',
-                understand_sharing: formData.get('understand_sharing') ? 'YES' : 'NO',
-                status: 'new'
-            };
+            // Add hidden iframe for submission
+            let iframe = document.getElementById('hidden-iframe');
+            if (!iframe) {
+                iframe = document.createElement('iframe');
+                iframe.name = 'hidden-iframe';
+                iframe.id = 'hidden-iframe';
+                iframe.style.display = 'none';
+                document.body.appendChild(iframe);
+            }
             
-            // Send to Google Sheets
-            fetch(GOOGLE_SHEET_URL, {
-                method: 'POST',
-                body: JSON.stringify(data),
-                headers: {
-                    'Content-Type': 'text/plain'
-                }
-            })
-            .then(response => response.json())
-            .then(result => {
-                if (result.status === 'ok') {
-                    window.location.href = 'thank-you.html';
-                } else {
-                    throw new Error('Submission failed');
-                }
-            })
-            .catch(error => {
-                btn.disabled = false;
-                btn.textContent = 'Submit Secure Declaration';
-                alert('Submission failed. Please try again.');
+            // Add all form fields as hidden inputs
+            const fields = [
+                'full_name', 'email', 'phone', 'address', 'country', 'contact_preference',
+                'entity_name', 'initial_contact', 'referral_relationship', 'platform_clone',
+                'fake_url', 'fake_app_name', 'fake_profits', 'scam_timeline',
+                'loss_tier', 'loss_date', 'total_loss', 'num_transfers', 'primary_crypto', 'funding_source',
+                'destination_wallet', 'tx_hash', 'send_platform', 'send_platform_other', 'multiple_addresses',
+                'can_upload', 'law_enforcement', 'report_number'
+            ];
+            
+            fields.forEach(field => {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = field;
+                input.value = formData.get(field) || '';
+                hiddenForm.appendChild(input);
             });
             
+            // Add evidence checkboxes (multiple values)
+            const evidenceValues = formData.getAll('evidence');
+            const evidenceInput = document.createElement('input');
+            evidenceInput.type = 'hidden';
+            evidenceInput.name = 'evidence';
+            evidenceInput.value = evidenceValues.join(', ');
+            hiddenForm.appendChild(evidenceInput);
+            
+            // Add consent checkboxes
+            const consentFields = ['certify_true', 'consent_review', 'agree_contact', 'understand_no_relationship', 'understand_sharing'];
+            consentFields.forEach(field => {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = field;
+                input.value = formData.get(field) ? 'YES' : 'NO';
+                hiddenForm.appendChild(input);
+            });
+            
+            // Add status
+            const statusInput = document.createElement('input');
+            statusInput.type = 'hidden';
+            statusInput.name = 'status';
+            statusInput.value = 'new';
+            hiddenForm.appendChild(statusInput);
+            
+            document.body.appendChild(hiddenForm);
+            
+            // Submit and redirect on load
+            iframe.onload = function() {
+                window.location.href = 'thank-you.html';
+            };
+            
+            hiddenForm.submit();
             return false;
         }
     </script>
