@@ -118,9 +118,9 @@
             <h2>Step 1: Calculate Your Retainer</h2>
             
             <div class="form-group">
-                <label>Reported Loss Amount (USD) <span class="required">*</span></label>
-                <input type="text" id="loss-amount" placeholder="Enter your total loss in USD" oninput="calculateRetainer()">
-                <span class="hint">Enter the approximate total amount you lost in the scam</span>
+                <label>Settlement Amount We Can Push For (USD) <span class="required">*</span></label>
+                <input type="text" id="loss-amount" placeholder="Enter the amount based on your evidence" oninput="calculateRetainer()">
+                <span class="hint">This is the amount we can reasonably pursue considering your documentation and the strength of your evidence</span>
             </div>
             
             <div class="case-info" id="retainer-calculation" style="display: none;">
@@ -151,7 +151,7 @@
                     <span class="case-info-label">ESTIMATED RECOVERY ANALYSIS</span>
                 </div>
                 <div class="case-info-row">
-                    <span class="case-info-label">Your Reported Loss</span>
+                    <span class="case-info-label">Settlement Amount</span>
                     <span class="case-info-value" id="est-loss">$0.00</span>
                 </div>
                 <div class="case-info-row">
@@ -168,6 +168,10 @@
                 </div>
                 <div class="case-info-row header" style="margin-top: 15px;">
                     <span class="case-info-label">POTENTIAL SETTLEMENT SCENARIOS</span>
+                </div>
+                <div class="case-info-row">
+                    <span class="case-info-label">Worst Case (Partial recovery)</span>
+                    <span class="case-info-value" id="est-recovery-worst">$0.00</span>
                 </div>
                 <div class="case-info-row">
                     <span class="case-info-label">Conservative (1.5x damages)</span>
@@ -366,6 +370,7 @@
             
             // Calculate estimated recovery (15% contingency after retainer)
             const netRecovery = loss * 0.85; // Client keeps 85%
+            const estimatedWorst = loss * 0.5; // 0.5x worst case
             const estimatedLow = loss * 1.5; // 1.5x with damages
             const estimatedMid = loss * 3;   // 3x with penalties
             const estimatedHigh = loss * 5;  // 5x with exemplary damages
@@ -386,6 +391,7 @@
             document.getElementById('est-retainer').textContent = '-$' + retainer.toFixed(2);
             document.getElementById('est-contingency').textContent = '-$' + (loss * 0.15).toFixed(2);
             document.getElementById('est-net-min').textContent = '$' + Math.max(0, loss - retainer - (loss * 0.15)).toFixed(2);
+            document.getElementById('est-recovery-worst').textContent = '$' + estimatedWorst.toLocaleString('en-US', {minimumFractionDigits: 2});
             document.getElementById('est-recovery-low').textContent = '$' + estimatedLow.toLocaleString('en-US', {minimumFractionDigits: 2});
             document.getElementById('est-recovery-mid').textContent = '$' + estimatedMid.toLocaleString('en-US', {minimumFractionDigits: 2});
             document.getElementById('est-recovery-high').textContent = '$' + estimatedHigh.toLocaleString('en-US', {minimumFractionDigits: 2});
