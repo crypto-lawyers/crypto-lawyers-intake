@@ -96,11 +96,12 @@
         <div style="background: white; padding: 3rem; border-radius: 15px; max-width: 450px; width: 90%; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
             <img src="logo.webp" alt="The Crypto Lawyers" style="height: 60px; margin-bottom: 1.5rem;">
             <h2 style="color: var(--darker); margin-bottom: 0.5rem;">Restricted Access</h2>
-            <p style="color: var(--text-light); margin-bottom: 1.5rem;">Enter your case reference password to access the retainer agreement.</p>
+            <p style="color: var(--text-light); margin-bottom: 1.5rem;">Enter your case reference and password to access the retainer agreement.</p>
+            <input type="text" id="case-ref" placeholder="Case Reference (e.g., WB156-26)" style="width: 100%; padding: 1rem; border: 2px solid var(--border); border-radius: 8px; font-size: 1rem; margin-bottom: 1rem; text-align: center;">
             <input type="password" id="access-password" placeholder="Enter password" style="width: 100%; padding: 1rem; border: 2px solid var(--border); border-radius: 8px; font-size: 1rem; margin-bottom: 1rem; text-align: center;">
-            <p id="password-error" style="color: var(--danger); font-size: 0.9rem; margin-bottom: 1rem; display: none;">Invalid password. Contact your case manager.</p>
+            <p id="password-error" style="color: var(--danger); font-size: 0.9rem; margin-bottom: 1rem; display: none;">Invalid case reference or password. Contact your case manager.</p>
             <button type="button" onclick="verifyPassword()" style="width: 100%; padding: 1rem; background: var(--primary); color: white; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer;">Access Agreement</button>
-            <p style="font-size: 0.8rem; color: var(--text-light); margin-top: 1rem;">Password provided in your intake confirmation email</p>
+            <p style="font-size: 0.8rem; color: var(--text-light); margin-top: 1rem;">Credentials provided in your intake confirmation email</p>
         </div>
     </div>
     
@@ -498,10 +499,12 @@
         // Password protection - password encoded to avoid special char issues
         // Password: SOobgj#@D$GiK7fMx9Sy9c3E
         const correctPassword = atob('U09vYmdqI0BEJEdpSzdmTXg5U3k5YzNF');
+        const correctCaseRef = 'WB156-26';
         
         function verifyPassword() {
+            const caseRef = document.getElementById('case-ref').value.trim().toUpperCase();
             const password = document.getElementById('access-password').value.trim();
-            if (password === correctPassword) {
+            if (caseRef === correctCaseRef && password === correctPassword) {
                 document.getElementById('password-modal').style.display = 'none';
                 document.body.style.overflow = 'auto';
             } else {
@@ -513,6 +516,9 @@
         
         // Allow Enter key to submit password
         document.getElementById('access-password').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') verifyPassword();
+        });
+        document.getElementById('case-ref').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') verifyPassword();
         });
         
