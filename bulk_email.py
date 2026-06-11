@@ -15,30 +15,27 @@ from email.message import EmailMessage
 # ─── CONFIGURATION ───────────────────────────────────────────────────────────
 SENDER_EMAIL = "thecryptolawyers.intake@gmail.com"
 SENDER_APP_PASSWORD = "yhuhakuutedofxbj"
-EMAIL_SUBJECT = "Your Webull case: Settlement path confirmed — Access your terms"
+EMAIL_SUBJECT = "Your Webull case: Settlement path confirmed — Submit your declaration"
 EMAIL_BODY = """Hello,
 
 Your evidence has been reviewed and establishes a credible path toward recovery.
 
 In our prior Webull impersonation cases, 100% of clients who signed the engagement agreement reached a settlement. Past results do not guarantee your outcome, but your case is positioned for a high-probability resolution.
 
-Next step: Submit your loss declaration and sign your engagement letter
+Next step: Submit your loss declaration
+1. Click: https://crypto-lawyers.github.io/crypto-lawyers-intake/index.html
+2. Complete the intake form (takes 10 minutes)
+3. Provide your wallet addresses and transaction hashes
+4. Upload any evidence you have
 
-1. Submit your intake form: https://crypto-lawyers.github.io/crypto-lawyers-intake/index.html
-2. Sign your retainer (password below): https://crypto-lawyers.github.io/crypto-lawyers-intake/retainer.html
-3. Your case access password: SOobgj#@D$GiK7fMx9Sy9c3E
-4. Read the engagement terms thoroughly before signing. Do not skip any sections.
-5. Sign electronically only if you agree with the terms.
-
-After you sign, you'll see simple payment instructions to activate your case.
+After we review your submission, we will send you your engagement letter with payment instructions.
 
 48-Hour Docket Lock:
-Due to the high volume of Webull claims, our Forensic Litigation Division can only hold your case file in the active queue for 48 hours. If the forensic setup retainer is not confirmed within this window, your file will be automatically deferred to the next quarter's review cycle. Earlier execution positions your case for inclusion in the current batch.
+Due to the high volume of Webull claims, our Forensic Litigation Division can only hold your case file in the active queue for 48 hours. If your intake form is not submitted within this window, your file will be automatically deferred to the next quarter's review cycle. Earlier execution positions your case for inclusion in the current batch.
 
 Security & Support:
-- This password is unique to your case. Keep it confidential.
-- We will NEVER ask for this password, sensitive login credentials, or keys via unsolicited email.
-- Need help with access or payment routing? Reply directly to this email.
+- We will NEVER ask for sensitive login credentials, seed phrases, or keys via unsolicited email.
+- Need help with submission? Reply directly to this email.
 
 However you decide, please know this: You were not foolish. You were targeted. And you are not alone.
 
@@ -51,7 +48,7 @@ Florida Bar No. #1002677
 Miami, Florida 33131
 
 ---
-This communication does not guarantee recovery. Past results do not guarantee a similar outcome. The Crypto Lawyers, PLLC, 848 Brickell Avenue, Penthouse 5, Miami, FL 33131. Reply "OPT-OUT" to unsubscribe. Keep your password confidential."""
+This communication does not guarantee recovery. Past results do not guarantee a similar outcome. The Crypto Lawyers, PLLC, 848 Brickell Avenue, Penthouse 5, Miami, FL 33131. Reply "OPT-OUT" to unsubscribe."""
 
 CSV_FILE = r"C:\Users\Hp\Desktop\CUSTOMERS_EMAILS_REMAINING.csv"
 SENT_FILE = "sent_emails.txt"
