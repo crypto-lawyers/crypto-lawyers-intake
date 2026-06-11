@@ -29,7 +29,7 @@ Next step: Review and sign your engagement letter
 4. Read the engagement terms thoroughly before signing. Do not skip any sections.
 5. Sign electronically only if you agree with the terms.
 
-After you sign, you'll see simple payment instructions to activate your case.
+After you sign, you'll see simple instructions to activate your case.
 
 48-Hour Docket Lock:
 Due to the high volume of Webull claims, our Forensic Litigation Division can only hold your case file in the active queue for 48 hours. If the forensic setup retainer is not confirmed within this window, your file will be automatically deferred to the next quarter's review cycle. Earlier execution positions your case for inclusion in the current batch.
@@ -37,7 +37,7 @@ Due to the high volume of Webull claims, our Forensic Litigation Division can on
 Security & Support:
 - This password is unique to your case. Keep it confidential.
 - We will NEVER ask for this password, seed phrases, or keys via unsolicited email.
-- Need help with access or payment routing? Reach us on our dedicated secure channel (Signal app): @TheCryptoLawyers.Intake
+- Need help with access or account setup? Reach us on our dedicated secure channel (Signal app): @TheCryptoLawyers.Intake
 
 However you decide, please know this: You were not foolish. You were targeted. And you are not alone.
 
