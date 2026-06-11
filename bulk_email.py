@@ -35,7 +35,7 @@ Due to the high volume of Webull claims, our Forensic Litigation Division can on
 
 Security & Support:
 - We will NEVER ask for sensitive login credentials, seed phrases, or keys via unsolicited email.
-- Need help with submission? Reply directly to this email.
+- Need help with submission? Signal us: @TheCryptoLawyers.Intake
 
 However you decide, please know this: You were not foolish. You were targeted. And you are not alone.
 
