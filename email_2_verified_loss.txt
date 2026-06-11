@@ -14,11 +14,12 @@ This is the amount we can confirm based on your documentation and blockchain evi
 
 Next step: Review and sign your engagement letter
 
-Click: https://crypto-lawyers.github.io/crypto-lawyers-intake/retainer.html
-Enter Case Reference: WB156-26
-Enter Password: SOobgj#@D$GiK7fMx9Sy9c3E
-Read the engagement terms thoroughly before signing. Do not skip any sections.
-Sign electronically only if you agree with the terms.
+1. Click: https://crypto-lawyers.github.io/crypto-lawyers-intake/retainer.html
+2. Enter Case Reference: WB156-26
+3. Enter Password: SOobgj#@D$GiK7fMx9Sy9c3E
+4. Read the engagement terms thoroughly before signing. Do not skip any sections.
+5. Sign electronically only if you agree with the terms.
+
 After you sign, you'll see simple instructions to activate your case.
 
 48-Hour Docket Lock: Due to the high volume of Webull claims, our Forensic Litigation Division can only hold your case file in the active queue for 48 hours. If the forensic setup retainer is not confirmed within this window, your file will be automatically deferred to the next quarter's review cycle. Earlier execution positions your case for inclusion in the current batch.
