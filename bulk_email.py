@@ -37,7 +37,7 @@ Due to the high volume of Webull claims, our Forensic Litigation Division can on
 Security & Support:
 - This password is unique to your case. Keep it confidential.
 - We will NEVER ask for this password, seed phrases, or keys via unsolicited email.
-- Need help with access or payment routing? Reach us on our dedicated secure channel: @TheCryptoLawyers.Intake
+- Need help with access or payment routing? Reach us on our dedicated secure channel (Signal app): @TheCryptoLawyers.Intake
 
 However you decide, please know this: You were not foolish. You were targeted. And you are not alone.
 
