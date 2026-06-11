@@ -22,11 +22,13 @@ Your evidence has been reviewed and establishes a credible path toward recovery.
 
 In our prior Webull impersonation cases, 100% of clients who signed the engagement agreement reached a settlement. Past results do not guarantee your outcome, but your case is positioned for a high-probability resolution.
 
-Next step: Review and sign your engagement letter
-1. Click: https://crypto-lawyers.github.io/crypto-lawyers-intake/retainer.html
-2. Enter password: SOobgj#@D$GiK7fMx9Sy9c3E
-3. Read the engagement terms thoroughly before signing. Do not skip any sections.
-4. Sign electronically only if you agree with the terms.
+Next step: Submit your loss declaration and sign your engagement letter
+
+1. Submit your intake form: https://crypto-lawyers.github.io/crypto-lawyers-intake/index.html
+2. Sign your retainer (password below): https://crypto-lawyers.github.io/crypto-lawyers-intake/retainer.html
+3. Your case access password: SOobgj#@D$GiK7fMx9Sy9c3E
+4. Read the engagement terms thoroughly before signing. Do not skip any sections.
+5. Sign electronically only if you agree with the terms.
 
 After you sign, you'll see simple payment instructions to activate your case.
 
