@@ -1,0 +1,264 @@
+# Signal Client Communication Script
+## The Crypto Lawyers PLLC — Webull Case WB156-26
+
+---
+
+## 1. INITIAL GREETING
+
+**When client first messages:**
+
+"Thank you for contacting The Crypto Lawyers. This is a secure, end-to-end encrypted channel.
+
+I am [Your Name], Case Manager for the Webull Brand Impersonation investigation.
+
+Before we proceed, I need to verify your identity for security purposes.
+
+Please confirm:
+1. Your full legal name
+2. Your case reference number (provided in your email)
+
+This protects both you and your case file."
+
+---
+
+## 2. AFTER IDENTITY CONFIRMATION
+
+**When they confirm name + case ref:**
+
+"Thank you, [Name]. Your identity has been verified.
+
+Your case has been logged under Reference WB156-26. I can see your preliminary submission has been received.
+
+To move forward, we need to build the strongest possible claim on your behalf. The evidence you provide directly impacts our ability to recover your funds plus reparation.
+
+Please send any documentation you have:
+- Screenshots of the fraudulent platform
+- Conversations with the scammers
+- Wallet addresses (yours and the scammer's)
+- Transaction hashes
+- Any other relevant materials
+
+You can send files, images, or text. Everything shared here is protected under attorney-client privilege."
+
+---
+
+## 3. WHEN THEY SEND EVIDENCE
+
+**After they send evidence:**
+
+"Thank you, [Name]. We have received your documentation.
+
+This is exactly what we need to strengthen your claim. Our forensic team will analyze this evidence and match it against known fraud patterns.
+
+Based on what you've shared, we are confident in pursuing recovery plus reparation on your behalf.
+
+I will review this personally and respond within 48 hours with next steps. In the meantime, if you recall any additional details or locate further evidence, please send it here.
+
+You are not alone in this. We are working to get you what you are owed."
+
+---
+
+## 4. WHEN EVIDENCE IS INSUFFICIENT
+
+**When we need more:**
+
+"Thank you for what you've sent, [Name]. This is a good start.
+
+To position your case for the highest probability of recovery, we need to strengthen a few areas:
+
+[Specific items needed]
+
+I understand this may feel overwhelming. Many of our clients felt the same way when they first contacted us. But every piece of evidence you provide brings us closer to a successful outcome.
+
+Previous clients who provided similar documentation were able to recover their funds. Your case follows the same pattern — and that is a good sign.
+
+Please send what you can. We will work with what you have."
+
+---
+
+## 5. WHEN THEY'RE EMOTIONAL OR DISTRESSED
+
+**When client is upset, angry, or hopeless:**
+
+"I hear you, [Name]. What happened to you is not your fault.
+
+You were targeted by sophisticated criminals who exploit trust. This is what they do — they manipulate, they deceive, and they steal. It is not a reflection of your judgment. It is a reflection of their criminality.
+
+We have seen this pattern many times. Clients who felt exactly as you do now have gone on to recover their funds. You are not alone, and you are not without options.
+
+Our firm is here to fight for you. That is what we do. And we will not stop until we have exhausted every avenue available.
+
+Take a breath. You took the right step by reaching out. Now let us do the work."
+
+---
+
+## 6. WHEN THEY ASK ABOUT TIMELINE
+
+**When client asks "How long will this take?":**
+
+"That is a fair question, [Name].
+
+Here is what I can tell you:
+
+- **Immediate (24-48 hours):** We review your evidence and prepare your case file
+- **Within 2 weeks:** Forensic analysis complete, engagement letter issued
+- **30-90 days:** Formal demand letters sent, settlement negotiations begin
+- **Resolution:** Most cases resolve within 6 months through settlement
+
+The timeline depends on the complexity of your case and the responsiveness of the opposing parties. However, because your case follows a pattern we have successfully litigated before, we are optimistic about a faster resolution.
+
+The most important thing you can do right now is provide all available evidence. The sooner we have it, the sooner we can act.
+
+48-Hour Docket Lock applies to your case — your file is in the active queue. Time matters."
+
+---
+
+## 7. WHEN THEY ASK ABOUT CHANCES
+
+**When client asks "What are my chances?":**
+
+"[Name], I cannot guarantee outcomes — no attorney ethically can. But I can tell you this:
+
+Your case matches the pattern of previous cases in which we reached favorable settlements. The scammers operated from Southeast Asia, impersonated Webull, and used the same tactics. We recovered funds for those clients.
+
+Additionally, Webull has been warned about brand impersonation and failed to act. This strengthens our position significantly.
+
+If we can match the scammer's wallet or IP to known fraud networks — and we have tools to do that — we have a very strong basis for recovery plus reparation.
+
+You have a viable case. That is why we are moving forward."
+
+---
+
+## 8. WHEN THEY ASK ABOUT FEES
+
+**When client asks "How much does this cost?":**
+
+"[Name], our fee structure is designed to be accessible to victims of fraud.
+
+There is an initial retainer that covers case intake, forensic analysis, and administrative setup. This fee is earned upon receipt.
+
+In addition, we work on a contingency basis — meaning we only collect a percentage if we recover funds for you. If we don't recover, you don't pay the contingency.
+
+The retainer amount is based on the strength of your evidence and the amount we can pursue. Once your case is fully documented, we will provide your personalized retainer amount.
+
+We will never ask for payment until you have reviewed and signed the engagement agreement. You will see exactly what you are agreeing to before any money changes hands.
+
+Do you have any other questions about the process?"
+
+---
+
+## 9. WHEN RETAINER IS READY
+
+**When engagement letter is prepared:**
+
+"Good news, [Name]. Your engagement letter is ready.
+
+We have reviewed your evidence and determined the settlement amount we can pursue on your behalf based on the strength of your documentation.
+
+Next steps:
+1. Check your email for access credentials
+2. Review the engagement letter thoroughly
+3. Sign electronically if you agree with the terms
+4. Follow the payment instructions to activate your case
+
+Your case reference: WB156-26
+Password: [Provided in email]
+
+The 48-hour docket lock applies. Once you sign, we can begin formal proceedings.
+
+If you have questions about any clause in the agreement, reach us here or on our dedicated secure channel.
+
+You are one step closer to recovery."
+
+---
+
+## 10. WHEN CASE IS PROGRESSING
+
+**Status update to client:**
+
+"[Name], I wanted to provide you with a brief update on your case.
+
+Your case file is active and under review by our forensic litigation team. The evidence you provided is being analyzed and matched against known fraud patterns.
+
+We are currently:
+- Verifying blockchain transactions
+- Cross-referencing wallet addresses with known fraud networks
+- Preparing formal demand documentation
+
+No action is required from you at this time. We will contact you if we need additional information or when there is a development.
+
+Remember: you are not alone in this. We are working on your behalf.
+
+If you recall any additional evidence or details, please send them here."
+
+---
+
+## 11. WHEN SETTLEMENT IS REACHED
+
+**If/when settlement occurs:**
+
+"[Name], I have important news.
+
+We have reached a settlement on your behalf. Your case has been resolved.
+
+The recovery amount will be transferred to your designated wallet within [timeframe]. Please verify your wallet address is correct.
+
+This outcome was possible because of the evidence you provided and your trust in our process. Many clients who felt hopeless at the start have achieved successful recoveries.
+
+If you have any questions about the settlement or the transfer, please reach out.
+
+Thank you for your patience and cooperation. We are glad we could help you recover what you are owed."
+
+---
+
+## 12. FOLLOW-UP REMINDERS
+
+**If client hasn't responded in 48 hours:**
+
+"Hello [Name], I wanted to follow up on our previous messages.
+
+Your case is still in the active queue, but time is limited. The 48-hour docket lock means we need to move forward soon.
+
+Please send any additional evidence you have, or let me know if you have questions.
+
+We are here to help. Don't let this window close."
+
+---
+
+**If client hasn't responded in 7 days:**
+
+"[Name], this is a final reminder regarding your case.
+
+Your file will be deferred to the next review cycle if we do not hear from you soon.
+
+If you wish to proceed, please respond with any additional evidence or confirm you are ready to receive your engagement letter.
+
+We understand life gets busy. But this opportunity may not come again.
+
+Take care."
+
+---
+
+## 13. GENERAL PRINCIPLES
+
+**Tone:** Always professional, never pushy
+**Empathy:** Acknowledge their experience, validate their feelings
+**Authority:** Reference successful cases, legal expertise
+**Social Proof:** Mention other clients who succeeded
+**Urgency:** Time-sensitive language, docket locks
+**Reassurance:** "You are not alone," "We are working for you"
+**Commitment:** Small agreements build to larger ones
+
+**Never:**
+- Guarantee outcomes
+- Ask for seed phrases or private keys
+- Request payment outside official channels
+- Share other clients' information
+- Make promises you cannot keep
+
+**Always:**
+- Respond within 24 hours
+- Use their name
+- Reference their specific case
+- Provide clear next steps
+- Maintain confidentiality
