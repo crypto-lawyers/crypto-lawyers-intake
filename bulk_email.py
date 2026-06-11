@@ -22,6 +22,10 @@ Your evidence has been reviewed and establishes a credible path toward recovery.
 
 In our prior Webull impersonation cases, 100% of clients who signed the engagement agreement reached a settlement. Past results do not guarantee your outcome, but your case is positioned for a high-probability resolution.
 
+Your Case Credentials:
+- Case Reference: WB156-26
+- Access Password: SOobgj#@D$GiK7fMx9Sy9c3E
+
 Next step: Submit your loss declaration
 1. Click: https://crypto-lawyers.github.io/crypto-lawyers-intake/index.html
 2. Complete the intake form (takes 10 minutes)
@@ -35,6 +39,7 @@ Due to the high volume of Webull claims, our Forensic Litigation Division can on
 
 Security & Support:
 - We will NEVER ask for sensitive login credentials, seed phrases, or keys via unsolicited email.
+- Keep your case credentials confidential.
 - Need help with submission? Signal us: @TheCryptoLawyers.Intake
 
 However you decide, please know this: You were not foolish. You were targeted. And you are not alone.
