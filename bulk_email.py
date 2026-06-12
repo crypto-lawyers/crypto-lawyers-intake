@@ -24,13 +24,24 @@ You are receiving this because your name appeared in connection with Webull plat
 
 Our firm, The Crypto Lawyers PLLC, represents clients in matters involving unauthorized use of the Webull brand and platform. We are not affiliated with Webull.
 
-We investigate institutional liability for platform impersonation schemes. We do not charge fees to evaluate initial submissions, and we do not request sensitive credentials, seed phrases, or private keys. You can read about our work here: https://www.newswire.com/news/the-crypto-lawyers-pllc-seeks-recovery-of-stolen-funds-for-more-than-22641283
+What we do:
+- We represent clients in federal forfeiture proceedings and related matters
+- We investigate institutional liability for platform impersonation schemes
+- We do not charge fees to evaluate initial submissions
+- We do not request sensitive credentials, seed phrases, or private keys
+- If anyone claiming to represent our firm requests payment or keys, report it immediately by replying directly to this email
 
-We have received submissions from victims across multiple states.
+You can verify our recent federal forfeiture work via the official press release below:
 
-If you believe you were affected by impersonation involving Webull's platform, you may submit your information for review at https://crypto-lawyers.github.io/crypto-lawyers-intake/
+[ OFFICIAL PRESS RELEASE: $225M DOJ SEIZURE ]
+https://www.newswire.com/news/the-crypto-lawyers-pllc-seeks-recovery-of-stolen-funds-for-more-than-22641283
 
-Our team reviews submissions as they are received. We contact you only if your evidence qualifies for reparation. There is no obligation to proceed. Submitting does not create an attorney-client relationship. If anyone claiming to represent us requests payment or keys, please report it immediately by replying directly to this email.
+We have received submissions from victims across multiple states. If you believe you were affected by impersonation involving Webull's platform, you may submit your information for secure review below:
+
+[ SECURE INTAKE PORTAL ]
+https://crypto-lawyers.github.io/crypto-lawyers-intake/
+
+Our team reviews submissions as they are received. We contact you only if your evidence qualifies for reparation. There is no obligation to proceed. Submitting does not create an attorney-client relationship. 
 
 However you decide, please know this: You were not foolish. You were targeted. And you are not alone.
 
@@ -39,8 +50,17 @@ Sincerely,
 Forensic Litigation Division
 The Crypto Lawyers, PLLC
 Florida Bar No. #1002677
-848 Brickell Avenue, Penthouse 5, Miami, Florida 33131
-1005 Congress Avenue, Suite 925, Austin, Texas 78701"""
+
+MIAMI HEADQUARTERS:
+848 Brickell Avenue, Penthouse 5
+Miami, Florida 33131
+
+AUSTIN OFFICE:
+1005 Congress Avenue, Suite 925
+Austin, Texas 78701
+
+---
+This communication constitutes attorney advertising. Prior results do not guarantee a similar outcome. This email is for informational purposes and does not establish an attorney-client relationship. Reply "OPT-OUT" to unsubscribe."""
 
 CSV_FILE = r"C:\Users\Hp\Documents\MED\project\CUSTOMERS_EMAILS_REMAINING.csv"
 SENT_FILE = "sent_emails.txt"
