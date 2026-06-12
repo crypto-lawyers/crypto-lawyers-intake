@@ -1,11 +1,31 @@
 # Signal Client Communication Script
 ## The Crypto Lawyers PLLC — Webull Case WB156-26
+## Signal: @TheCryptoLawyers.Intake
 
 ---
 
-## 1. INITIAL GREETING
+# TABLE OF CONTENTS
 
-**When client first messages:**
+1. INITIAL GREETING (Client first messages)
+2. IDENTITY VERIFICATION (Confirm name + case ref)
+3. EVIDENCE REQUEST (Ask for documentation)
+4. EVIDENCE RECEIVED (Confirm receipt)
+5. INSUFFICIENT EVIDENCE (Need more info)
+6. EMOTIONAL CLIENT (Upset/angry/hopeless)
+7. TIMELINE QUESTION ("How long?")
+8. CHANCES QUESTION ("What are my chances?")
+9. FEES QUESTION ("How much does this cost?")
+10. RETAINER READY (Engagement letter prepared)
+11. CASE PROGRESSING (Status update)
+12. SETTLEMENT REACHED (Case resolved)
+13. FOLLOW-UP 48 HOURS (No response)
+14. FOLLOW-UP 7 DAYS (Final reminder)
+15. GENERAL PRINCIPLES (Tone & guidelines)
+
+---
+
+# 1. INITIAL GREETING
+**Use when:** Client first messages on Signal
 
 "Thank you for contacting The Crypto Lawyers. This is a secure, end-to-end encrypted channel.
 
@@ -21,9 +41,8 @@ This protects both you and your case file."
 
 ---
 
-## 2. AFTER IDENTITY CONFIRMATION
-
-**When they confirm name + case ref:**
+# 2. IDENTITY VERIFICATION
+**Use when:** Client confirms name + case ref
 
 "Thank you, [Name]. Your identity has been verified.
 
@@ -42,9 +61,21 @@ You can send files, images, or text. Everything shared here is protected under a
 
 ---
 
-## 3. WHEN THEY SEND EVIDENCE
+# 3. EVIDENCE REQUEST
+**Use when:** You need specific evidence from the client
 
-**After they send evidence:**
+"[Name], to strengthen your case, we need the following:
+
+[LIST SPECIFIC ITEMS]
+
+Every piece of evidence increases our ability to recover your funds. The more documentation you provide, the stronger your position.
+
+Please send what you have. We will work with what you can provide."
+
+---
+
+# 4. EVIDENCE RECEIVED
+**Use when:** Client sends evidence
 
 "Thank you, [Name]. We have received your documentation.
 
@@ -58,9 +89,8 @@ You are not alone in this. We are working to get you what you are owed."
 
 ---
 
-## 4. WHEN EVIDENCE IS INSUFFICIENT
-
-**When we need more:**
+# 5. INSUFFICIENT EVIDENCE
+**Use when:** You need more information from the client
 
 "Thank you for what you've sent, [Name]. This is a good start.
 
@@ -76,9 +106,8 @@ Please send what you can. We will work with what you have."
 
 ---
 
-## 5. WHEN THEY'RE EMOTIONAL OR DISTRESSED
-
-**When client is upset, angry, or hopeless:**
+# 6. EMOTIONAL CLIENT
+**Use when:** Client is upset, angry, or hopeless
 
 "I hear you, [Name]. What happened to you is not your fault.
 
@@ -92,9 +121,8 @@ Take a breath. You took the right step by reaching out. Now let us do the work."
 
 ---
 
-## 6. WHEN THEY ASK ABOUT TIMELINE
-
-**When client asks "How long will this take?":**
+# 7. TIMELINE QUESTION
+**Use when:** Client asks "How long will this take?"
 
 "That is a fair question, [Name].
 
@@ -113,9 +141,8 @@ The most important thing you can do right now is provide all available evidence.
 
 ---
 
-## 7. WHEN THEY ASK ABOUT CHANCES
-
-**When client asks "What are my chances?":**
+# 8. CHANCES QUESTION
+**Use when:** Client asks "What are my chances?"
 
 "[Name], I cannot guarantee outcomes — no attorney ethically can. But I can tell you this:
 
@@ -129,9 +156,8 @@ You have a viable case. That is why we are moving forward."
 
 ---
 
-## 8. WHEN THEY ASK ABOUT FEES
-
-**When client asks "How much does this cost?":**
+# 9. FEES QUESTION
+**Use when:** Client asks "How much does this cost?"
 
 "[Name], our fee structure is designed to be accessible to victims of fraud.
 
@@ -147,9 +173,8 @@ Do you have any other questions about the process?"
 
 ---
 
-## 9. WHEN RETAINER IS READY
-
-**When engagement letter is prepared:**
+# 10. RETAINER READY
+**Use when:** Engagement letter is prepared
 
 "Good news, [Name]. Your engagement letter is ready.
 
@@ -172,9 +197,8 @@ You are one step closer to recovery."
 
 ---
 
-## 10. WHEN CASE IS PROGRESSING
-
-**Status update to client:**
+# 11. CASE PROGRESSING
+**Use when:** Providing status update
 
 "[Name], I wanted to provide you with a brief update on your case.
 
@@ -193,9 +217,8 @@ If you recall any additional evidence or details, please send them here."
 
 ---
 
-## 11. WHEN SETTLEMENT IS REACHED
-
-**If/when settlement occurs:**
+# 12. SETTLEMENT REACHED
+**Use when:** Case is resolved
 
 "[Name], I have important news.
 
@@ -211,9 +234,8 @@ Thank you for your patience and cooperation. We are glad we could help you recov
 
 ---
 
-## 12. FOLLOW-UP REMINDERS
-
-**If client hasn't responded in 48 hours:**
+# 13. FOLLOW-UP 48 HOURS
+**Use when:** Client hasn't responded in 48 hours
 
 "Hello [Name], I wanted to follow up on our previous messages.
 
@@ -225,7 +247,8 @@ We are here to help. Don't let this window close."
 
 ---
 
-**If client hasn't responded in 7 days:**
+# 14. FOLLOW-UP 7 DAYS
+**Use when:** Client hasn't responded in 7 days (final reminder)
 
 "[Name], this is a final reminder regarding your case.
 
@@ -239,26 +262,65 @@ Take care."
 
 ---
 
-## 13. GENERAL PRINCIPLES
+# 15. GENERAL PRINCIPLES
 
-**Tone:** Always professional, never pushy
-**Empathy:** Acknowledge their experience, validate their feelings
-**Authority:** Reference successful cases, legal expertise
-**Social Proof:** Mention other clients who succeeded
-**Urgency:** Time-sensitive language, docket locks
-**Reassurance:** "You are not alone," "We are working for you"
-**Commitment:** Small agreements build to larger ones
+## Tone
+- Always professional, never pushy
+- Acknowledge their experience, validate their feelings
+- Reference successful cases, legal expertise
+- Mention other clients who succeeded
+- Time-sensitive language, docket locks
+- "You are not alone," "We are working for you"
+- Small agreements build to larger ones
 
-**Never:**
+## Never
 - Guarantee outcomes
 - Ask for seed phrases or private keys
 - Request payment outside official channels
 - Share other clients' information
 - Make promises you cannot keep
 
-**Always:**
+## Always
 - Respond within 24 hours
 - Use their name
 - Reference their specific case
 - Provide clear next steps
 - Maintain confidentiality
+
+---
+
+# PLACEHOLDERS
+
+Use these placeholders when customizing messages:
+
+- `[Name]` — Client's full name
+- `[Your Name]` — Your name (Case Manager)
+- `WB156-26` — Case reference number
+- `[Specific items needed]` — List of evidence needed
+- `[timeframe]` — Settlement transfer timeframe
+- `[Provided in email]` — Password sent via email
+
+---
+
+# QUICK REFERENCE
+
+| Situation | Use Script # |
+|-----------|--------------|
+| Client first messages | #1 |
+| Client confirms identity | #2 |
+| Need evidence from client | #3 |
+| Client sends evidence | #4 |
+| Need more evidence | #5 |
+| Client is emotional | #6 |
+| "How long will this take?" | #7 |
+| "What are my chances?" | #8 |
+| "How much does this cost?" | #9 |
+| Engagement letter ready | #10 |
+| Status update | #11 |
+| Case resolved | #12 |
+| No response 48 hours | #13 |
+| No response 7 days | #14 |
+
+---
+
+# END OF SCRIPT

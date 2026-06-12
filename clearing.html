@@ -110,7 +110,12 @@
     <div class="container">
         <div class="doc-header">
             <h1>Financial Clearing Instructions</h1>
-            <p class="firm-name">The Crypto Lawyers PLLC | 1005 Congress Avenue, Suite 925, Austin, Texas 78701</p>
+            <p class="firm-name">The Crypto Lawyers PLLC | 848 Brickell Avenue, Penthouse 5, Miami, Florida 33131 | 1005 Congress Avenue, Suite 925, Austin, Texas 78701</p>
+        </div>
+        
+        <div class="warning-box" style="margin-bottom: 2rem;">
+            <strong>PREREQUISITE: You must sign the retainer agreement before proceeding.</strong>
+            <p style="margin-top: 0.5rem;">If you have not yet signed the engagement agreement, <a href="retainer.html" style="color: var(--primary); font-weight: 600;">click here to access the retainer</a>. You will need your case reference (WB156-26) and password provided in your email.</p>
         </div>
         
         <!-- Step 1: Calculate Retainer -->
@@ -156,37 +161,37 @@
                 </div>
                 <div class="case-info-row">
                     <span class="case-info-label">Less: Upfront Retainer</span>
-                    <span class="case-info-value" style="color: var(--error);" id="est-retainer">-$0.00</span>
+                    <span class="case-info-value" style="color: var(--danger);" id="est-retainer">-$0.00</span>
                 </div>
                 <div class="case-info-row">
-                    <span class="case-info-label">Less: Contingency Fee (15%)</span>
-                    <span class="case-info-value" style="color: var(--error);" id="est-contingency">-$0.00</span>
+                    <span class="case-info-label">Less: Contingency Fee (15% of recovery, only if we win)</span>
+                    <span class="case-info-value" style="color: var(--danger);" id="est-contingency">-$0.00</span>
                 </div>
                 <div class="case-info-row total">
-                    <span class="case-info-label">Minimum Net Recovery</span>
+                    <span class="case-info-label">Your Net Recovery (After All Fees)</span>
                     <span class="case-info-value amount" id="est-net-min">$0.00</span>
                 </div>
                 <div class="case-info-row header" style="margin-top: 15px;">
                     <span class="case-info-label">POTENTIAL SETTLEMENT SCENARIOS</span>
                 </div>
                 <div class="case-info-row">
-                    <span class="case-info-label">Worst Case (Partial recovery)</span>
+                    <span class="case-info-label">Worst Case (Partial recovery only)</span>
                     <span class="case-info-value" id="est-recovery-worst">$0.00</span>
                 </div>
                 <div class="case-info-row">
-                    <span class="case-info-label">Conservative (1.5x damages)</span>
+                    <span class="case-info-label">Conservative (1.5x damages + penalties)</span>
                     <span class="case-info-value" id="est-recovery-low">$0.00</span>
                 </div>
                 <div class="case-info-row">
-                    <span class="case-info-label">Moderate (3x penalties)</span>
+                    <span class="case-info-label">Moderate (3x statutory penalties)</span>
                     <span class="case-info-value" id="est-recovery-mid">$0.00</span>
                 </div>
                 <div class="case-info-row">
-                    <span class="case-info-label">Aggressive (5x exemplary)</span>
+                    <span class="case-info-label">Aggressive (5x exemplary damages)</span>
                     <span class="case-info-value amount" id="est-recovery-high">$0.00</span>
                 </div>
                 <div class="hint" style="margin-top: 10px; font-size: 11px;">
-                    * Estimates based on DOJ seizure of $225M USDT. Actual recovery depends on court approval and allocation.
+                    * Contingency fee is only charged if we recover funds for you. If no recovery, you pay nothing beyond the retainer. Estimates based on DOJ seizure of $225M USDT. Actual recovery depends on court approval and allocation.
                 </div>
             </div>
             
