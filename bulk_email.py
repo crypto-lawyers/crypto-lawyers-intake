@@ -147,6 +147,7 @@ def build_message(sender: str, to: str, subject: str, body: str) -> EmailMessage
     msg["Subject"] = subject
     msg["Reply-To"] = sender
     msg["List-Unsubscribe"] = f"<mailto:{sender}?subject=OPT-OUT>"
+    msg["List-Unsubscribe-Post"] = "List-Unsubscribe=One-Click"
     msg.set_content(body)
     return msg
 
