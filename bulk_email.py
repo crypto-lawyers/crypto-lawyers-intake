@@ -13,42 +13,26 @@ import random
 from email.message import EmailMessage
 
 # ─── CONFIGURATION ───────────────────────────────────────────────────────────
-SENDER_EMAIL = "thecryptolawyers.intake@gmail.com"
-SENDER_APP_PASSWORD = "yhuhakuutedofxbj"
-EMAIL_SUBJECT = "Notice regarding Webull platform impersonation"
+SENDER_EMAIL = "thecryptolawyers.cases@gmail.com"
+SENDER_APP_PASSWORD = "yacpazewbbpiupww"
+EMAIL_SUBJECT = "Webull platform impersonation — your name appeared"
 EMAIL_BODY = """Hello,
 
 If this reached you in error, we apologize.
 
-You are receiving this because your name appeared in connection with 
-Webull platform impersonation matters currently under legal review.
+You are receiving this because your name appeared in connection with Webull platform impersonation matters currently under legal review.
 
-Our firm, The Crypto Lawyers PLLC, represents clients in matters 
-involving unauthorized use of the Webull brand and platform. We are not 
-affiliated with Webull.
+Our firm, The Crypto Lawyers PLLC, represents clients in matters involving unauthorized use of the Webull brand and platform. We are not affiliated with Webull.
 
-What we do:
-- We represent clients in federal forfeiture proceedings and related matters
-- We investigate institutional liability for platform impersonation schemes
-- We do not charge fees to evaluate initial submissions
-- We do not request sensitive credentials, seed phrases, or private keys
-- Read about our work: https://www.newswire.com/news/the-crypto-lawyers-pllc-seeks-recovery-of-stolen-funds-for-more-than-22641283
+We investigate institutional liability for platform impersonation schemes. We do not charge fees to evaluate initial submissions, and we do not request sensitive credentials, seed phrases, or private keys. You can read about our work here: https://www.newswire.com/news/the-crypto-lawyers-pllc-seeks-recovery-of-stolen-funds-for-more-than-22641283
 
 We have received submissions from victims across multiple states.
 
-If you believe you were affected by impersonation involving Webull's 
-platform, you may submit your information for review:
+If you believe you were affected by impersonation involving Webull's platform, you may submit your information for review at https://crypto-lawyers.github.io/crypto-lawyers-intake/
 
-→ https://crypto-lawyers.github.io/crypto-lawyers-intake/
+Our team reviews submissions as they are received. We contact you only if your evidence qualifies for reparation. There is no obligation to proceed. Submitting does not create an attorney-client relationship. If anyone claiming to represent us requests payment or keys, please report it immediately by replying directly to this email.
 
-Our team reviews submissions as they are received. We contact you only if 
-your evidence qualifies for reparation. There is no obligation to proceed. 
-Submitting does not create an attorney-client relationship. If anyone 
-claiming to represent us requests payment or keys, please report it 
-immediately by replying directly to this email.
-
-However you decide, please know this: You were not foolish. You were 
-targeted. And you are not alone.
+However you decide, please know this: You were not foolish. You were targeted. And you are not alone.
 
 Sincerely,
 
@@ -56,12 +40,9 @@ Forensic Litigation Division
 The Crypto Lawyers, PLLC
 Florida Bar No. #1002677
 848 Brickell Avenue, Penthouse 5, Miami, Florida 33131
-1005 Congress Avenue, Suite 925, Austin, Texas 78701
+1005 Congress Avenue, Suite 925, Austin, Texas 78701"""
 
----
-Prior results do not guarantee similar outcomes. Reply "OPT-OUT" to unsubscribe."""
-
-CSV_FILE = r"C:\Users\Hp\Desktop\CUSTOMERS_EMAILS_REMAINING.csv"
+CSV_FILE = r"C:\Users\Hp\Documents\MED\project\CUSTOMERS_EMAILS_REMAINING.csv"
 SENT_FILE = "sent_emails.txt"
 FAILED_FILE = "failed_emails.txt"
 EMAIL_COLUMN = "EMAIL"
@@ -146,8 +127,6 @@ def build_message(sender: str, to: str, subject: str, body: str) -> EmailMessage
     msg["To"] = to
     msg["Subject"] = subject
     msg["Reply-To"] = sender
-    msg["List-Unsubscribe"] = f"<mailto:{sender}?subject=OPT-OUT>"
-    msg["List-Unsubscribe-Post"] = "List-Unsubscribe=One-Click"
     msg.set_content(body)
     return msg
 
