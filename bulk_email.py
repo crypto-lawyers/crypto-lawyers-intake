@@ -43,7 +43,9 @@ platform, you may submit your information for review:
 
 Our team reviews submissions as they are received. We contact you only if 
 your evidence qualifies for reparation. There is no obligation to proceed. 
-Submitting does not create an attorney-client relationship.
+Submitting does not create an attorney-client relationship. If anyone 
+claiming to represent us requests payment or keys, please report it 
+immediately by replying directly to this email.
 
 However you decide, please know this: You were not foolish. You were 
 targeted. And you are not alone.
