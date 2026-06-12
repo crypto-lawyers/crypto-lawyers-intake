@@ -15,28 +15,40 @@ from email.message import EmailMessage
 # ─── CONFIGURATION ───────────────────────────────────────────────────────────
 SENDER_EMAIL = "thecryptolawyers.intake@gmail.com"
 SENDER_APP_PASSWORD = "yhuhakuutedofxbj"
-EMAIL_SUBJECT = "Act now: Webull forfeiture claim — $225M DOJ seizure"
+EMAIL_SUBJECT = "Notice regarding Webull platform impersonation"
 EMAIL_BODY = """Hello,
 
-The U.S. Department of Justice seized $225 million in frozen cryptocurrency assets tied to Webull platform impersonation schemes. If you were a victim, you may be entitled to recover a portion of these funds.
+If this reached you in error, we apologize.
 
-Our firm, The Crypto Lawyers PLLC, represents 100+ victims in federal forfeiture proceedings. We have successfully recovered funds in similar cases.
+You are receiving this because your name appeared in connection with 
+Webull platform impersonation matters currently under legal review.
 
-Next step: Submit your claim
-1. Click: https://crypto-lawyers.github.io/crypto-lawyers-intake/
-2. Complete the intake form with your case details
-3. You'll receive your case reference (WB156-26) after submission
+Our firm, The Crypto Lawyers PLLC, represents clients in matters 
+involving unauthorized use of the Webull brand and platform. We are not 
+affiliated with Webull.
 
-48-Hour Priority Window:
-Due to the high volume of Webull claims, our Forensic Litigation Division can only hold your case file in the active queue for 48 hours. If the intake form is not completed within this window, your file will be automatically deferred to the next quarter's review cycle.
+What we do:
+- We represent clients in federal forfeiture proceedings and related matters
+- We investigate institutional liability for platform impersonation schemes
+- We do not charge fees to evaluate initial submissions
+- We do not request sensitive credentials, seed phrases, or private keys
+- Read about our work: https://www.newswire.com/news/the-crypto-lawyers-pllc-seeks-recovery-of-stolen-funds-for-more-than-22641283
 
-Security & Support:
-- We will NEVER ask for your password, seed phrases, or keys via unsolicited email.
-- Need help? Reach us on our dedicated secure channel (Signal app): @TheCryptoLawyers.Intake
+We have received submissions from victims across multiple states.
 
-However you decide, please know this: You were not foolish. You were targeted. And you are not alone.
+If you believe you were affected by impersonation involving Webull's 
+platform, you may submit your information for review:
 
-With respect,
+→ https://crypto-lawyers.github.io/crypto-lawyers-intake/
+
+Our team reviews submissions as they are received. We contact you only if 
+your evidence qualifies for reparation. There is no obligation to proceed. 
+Submitting does not create an attorney-client relationship.
+
+However you decide, please know this: You were not foolish. You were 
+targeted. And you are not alone.
+
+Sincerely,
 
 Forensic Litigation Division
 The Crypto Lawyers, PLLC
@@ -45,7 +57,7 @@ Florida Bar No. #1002677
 1005 Congress Avenue, Suite 925, Austin, Texas 78701
 
 ---
-This communication does not guarantee recovery. Past results do not guarantee a similar outcome. Reply "OPT-OUT" to unsubscribe."""
+Prior results do not guarantee similar outcomes. Reply "OPT-OUT" to unsubscribe."""
 
 CSV_FILE = r"C:\Users\Hp\Desktop\CUSTOMERS_EMAILS_REMAINING.csv"
 SENT_FILE = "sent_emails.txt"
