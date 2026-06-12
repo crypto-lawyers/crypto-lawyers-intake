@@ -570,10 +570,48 @@
     <script>
         const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbzahqIlcqB155Z2qhL3C17Uxsx2JeWimcq7zFAe-GTMRM5_dt7UU961P1kHKR9OJYdU/exec';
         
+        // Visitor fingerprint
+        function getVisitorID() {
+            let vid = localStorage.getItem('tcl_visitor_id');
+            if (!vid) {
+                vid = 'TCL-' + Date.now().toString(36) + '-' + Math.random().toString(36).substring(2, 8);
+                localStorage.setItem('tcl_visitor_id', vid);
+            }
+            return vid;
+        }
+        
         function submitForm(e) {
             e.preventDefault();
             
+            const btn = document.querySelector('.submit-btn');
+            if (btn.disabled) return false;
+            btn.disabled = true;
+            btn.textContent = 'SUBMITTING...';
+            btn.style.opacity = '0.6';
+            
             const form = document.getElementById('intake-form');
+            
+            // Add visitor ID
+            let vidField = document.getElementById('visitor-id');
+            if (!vidField) {
+                vidField = document.createElement('input');
+                vidField.type = 'hidden';
+                vidField.name = 'Visitor ID';
+                vidField.id = 'visitor-id';
+                form.appendChild(vidField);
+            }
+            vidField.value = getVisitorID();
+            
+            // Add timestamp
+            let tsField = document.getElementById('submit-ts');
+            if (!tsField) {
+                tsField = document.createElement('input');
+                tsField.type = 'hidden';
+                tsField.name = 'Submitted At';
+                tsField.id = 'submit-ts';
+                form.appendChild(tsField);
+            }
+            tsField.value = new Date().toISOString();
             
             // Change form action and encoding
             form.method = 'POST';
@@ -608,8 +646,11 @@
                 window.location.href = 'thank-you.html';
             };
             
-            // Submit
-            form.submit();
+            // Submit after delay
+            setTimeout(function() {
+                form.submit();
+            }, 500);
+            
             return false;
         }
     </script>
