@@ -114,6 +114,13 @@
         .form-progress .step { display: flex; flex-direction: column; align-items: center; gap: 0.3rem; }
         .form-progress .step-num { width: 30px; height: 30px; border-radius: 50%; background: var(--border); color: var(--text-light); display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.85rem; }
         .form-progress .step-label { font-size: 0.7rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; }
+        
+        @media (max-width: 600px) {
+            .form-progress { flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
+            .form-progress .step { flex: 0 0 auto; }
+            .form-progress .step-num { width: 28px; height: 28px; font-size: 0.75rem; }
+            .form-progress .step-label { font-size: 0.6rem; }
+        }
     </style>
 </head>
 <body>
